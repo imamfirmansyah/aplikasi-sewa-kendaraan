@@ -121,11 +121,6 @@ public class FormPelanggan extends javax.swing.JFrame {
         });
 
         btnRefresh.setText("Refresh");
-        btnRefresh.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnRefreshMouseClicked(evt);
-            }
-        });
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRefreshActionPerformed(evt);
@@ -239,10 +234,6 @@ public class FormPelanggan extends javax.swing.JFrame {
         // munculkan data kendaraan
         showDataPelanggan();
     }//GEN-LAST:event_formWindowActivated
-
-    private void btnRefreshMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRefreshMouseClicked
-
-    }//GEN-LAST:event_btnRefreshMouseClicked
 
     private void tblPelangganMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPelangganMouseClicked
         int row = tblPelanggan.getSelectedRow();

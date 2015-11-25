@@ -6,7 +6,7 @@ public class Main {
         System.out.println("Mengakses HTTP Service");
         
         // memanggil form login
-        FormUser callForm = new FormUser();
+        FormLogin callForm = new FormLogin();
         callForm.setVisible(true);   
                 
     }

@@ -61,6 +61,7 @@ public class FormUser extends javax.swing.JFrame {
         labelPassword = new javax.swing.JLabel();
         inputPassword = new javax.swing.JPasswordField();
         btnAktif = new javax.swing.JButton();
+        btnRefresh = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Form Pelaggan");
@@ -129,6 +130,18 @@ public class FormUser extends javax.swing.JFrame {
         labelPassword.setText("Password");
 
         btnAktif.setText("Non Akifkan");
+        btnAktif.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAktifActionPerformed(evt);
+            }
+        });
+
+        btnRefresh.setText("Refresh");
+        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRefreshActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -159,6 +172,8 @@ public class FormUser extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnHapus)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnRefresh)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnAktif)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
@@ -168,7 +183,7 @@ public class FormUser extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnHapus, btnTambah, btnUbah});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnHapus, btnRefresh, btnTambah, btnUbah});
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnFormSewa, btnKeluar});
 
@@ -196,7 +211,8 @@ public class FormUser extends javax.swing.JFrame {
                     .addComponent(btnTambah)
                     .addComponent(btnUbah)
                     .addComponent(btnHapus)
-                    .addComponent(btnAktif))
+                    .addComponent(btnAktif)
+                    .addComponent(btnRefresh))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -300,92 +316,146 @@ public class FormUser extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTambahActionPerformed
 
     private void btnUbahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUbahActionPerformed
-//        String idPelanggan = inputIdUser.getText();
-//        String namaPelanggan = inputNama.getText().replaceAll(" ", "%20");
-//        String alamat = inputAlamat.getText().replaceAll(" ", "%20");
-//        String noTelp = inputNoTelepon.getText().replaceAll(" ", "%20");
-//        String noIdentitas = inputNoIdentitas.getText().replaceAll(" ", "%20");
-//
-//        btnHapus.setEnabled(false);
-//
-//        if (namaPelanggan.isEmpty() || alamat.isEmpty() || noTelp.isEmpty() || noIdentitas.isEmpty()) {
-//
-//            JOptionPane.showMessageDialog(this, "Data Tidak Boleh Kosong", "Informasi", JOptionPane.ERROR_MESSAGE);
-//
-//            btnTambah.setEnabled(false);
-//
-//        } else {
-//
-//            String url = Path.serverURL + "/pelanggan/update/" + idPelanggan + "/" + namaPelanggan + "/" + alamat + "/" + noTelp + "/" + noIdentitas;
-//
-//            getDataURL dataurl = new getDataURL();
-//
-//            try {
-//                String data = dataurl.getData(url);
-//                System.out.println(data);
-//
-//                // bersihkan form
-//                cleanFormPelanggan();
-//
-//                btnTambah.setEnabled(true);
-//                btnUbah.setEnabled(false);
-//
-//                JOptionPane.showMessageDialog(this, "Data Berhasil diubah", "Informasi", JOptionPane.INFORMATION_MESSAGE);
-//
-//                // munculkan data kendaraan
-//                showDataPelanggan();
-//
-//            } catch (IOException ex) {
-//                Logger.getLogger(FormUser.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//        }
+        String id = inputIdUser.getText();
+        String nama = inputNama.getText();
+        String nama_filter = nama.replaceAll(" ", "%20");
+        String username = inputUsername.getText();
+        String password = inputPassword.getText();
+        String password_hash = DigestUtils.md5Hex(password);
+
+        System.out.println("Nama : " + nama);
+        System.out.println("Username : " + username);
+        System.out.println("Password : " + password);
+
+        if (nama.isEmpty() || username.isEmpty()) {
+
+            JOptionPane.showMessageDialog(this, "Nama dan Username Tidak Boleh Kosong", "Informasi", JOptionPane.ERROR_MESSAGE);
+
+        } else if (username.contains(" ")) {
+
+            JOptionPane.showMessageDialog(this, "Username Tidak Boleh Menggunakan Spasi", "Informasi", JOptionPane.ERROR_MESSAGE);
+
+        } else {
+            try {
+
+                String url;
+
+                if (password.isEmpty()) {
+                    url = Path.serverURL + "/user/update/" + id + "/" + nama_filter + "/" + username;
+                } else {
+                    url = Path.serverURL + "/user/update/" + id + "/" + nama_filter + "/" + username + "/" + password_hash;
+                }
+
+                getDataURL dataurl = new getDataURL();
+
+                String data = dataurl.getData(url);
+                System.out.println(data);
+
+                if (data.equals("1")) {
+
+                    JOptionPane.showMessageDialog(this, "Data Berhasil diubah", "Informasi", JOptionPane.INFORMATION_MESSAGE);
+
+                    // refresh form
+                    refreshForm();
+                    
+                } else {
+
+                    JOptionPane.showMessageDialog(this, "Data Tidak Berhasil diubah", "Informasi", JOptionPane.ERROR_MESSAGE);
+
+                }
+
+            } catch (IOException ex) {
+                Logger.getLogger(FormUser.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }//GEN-LAST:event_btnUbahActionPerformed
 
     private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
-//        String idPelanggan = inputIdUser.getText();
-//        System.out.println("Memilih ID : " + idPelanggan);
-//
-//        int dialogButton = JOptionPane.YES_NO_OPTION;
-//        int dialogResult;
-//        dialogResult = JOptionPane.showConfirmDialog(this, "Anda yakin Menghapus Data ini? ", "Konfirmasi", dialogButton);
-//
-//        if (dialogResult == 0) {
-//            String url = Path.serverURL + "/pelanggan/delete/" + idPelanggan;
-//
-//            getDataURL dataurl = new getDataURL();
-//
-//            try {
-//                String data = dataurl.getData(url);
-//                System.out.println(data);
-//
-//                if (data.equals("1")) {
-//                    JOptionPane.showMessageDialog(this, "Data Berhasil dihapus", "Informasi", JOptionPane.INFORMATION_MESSAGE);
-//
-//                    System.out.println("Menghapus Data ID : " + idPelanggan);
-//
-//                } else {
-//                    JOptionPane.showMessageDialog(this, "Data Tidak Berhasil dihapus", "Informasi", JOptionPane.ERROR_MESSAGE);
-//                }
-//
-//            } catch (IOException ex) {
-//                Logger.getLogger(FormUser.class.getName()).log(Level.SEVERE, null, ex);
-//
-//                JOptionPane.showMessageDialog(this, "Data Tidak Bisa dihapus\nKarena Memiliki Relasi dengan Data Lainnya", "Informasi", JOptionPane.ERROR_MESSAGE);
-//            }
-//        } else {
-//            System.out.println("Tidak Menghapus : " + idPelanggan);
-//        }
-//
-//        // munculkan data kendaraan
-//        showDataPelanggan();
-//
-//        // bersihkan form
-//        cleanFormPelanggan();
-//
-//        btnTambah.setEnabled(true);
-//        btnUbah.setEnabled(false);
-//        btnHapus.setEnabled(false);
+        String id = inputIdUser.getText();
+        System.out.println("Memilih ID : " + id);
+
+        int dialogButton = JOptionPane.YES_NO_OPTION;
+        int dialogResult;
+        dialogResult = JOptionPane.showConfirmDialog(this, "Anda yakin Menghapus Data ini? ", "Konfirmasi", dialogButton);
+
+        if (dialogResult == 0) {
+            String url = Path.serverURL + "/user/delete/" + id;
+
+            getDataURL dataurl = new getDataURL();
+
+            try {
+                String data = dataurl.getData(url);
+                System.out.println(data);
+
+                if (data.equals("1")) {
+                    JOptionPane.showMessageDialog(this, "Data Berhasil dihapus", "Informasi", JOptionPane.INFORMATION_MESSAGE);
+
+                    System.out.println("Menghapus Data ID : " + id);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Data Tidak Berhasil dihapus", "Informasi", JOptionPane.ERROR_MESSAGE);
+                }
+
+            } catch (IOException ex) {
+                Logger.getLogger(FormUser.class.getName()).log(Level.SEVERE, null, ex);
+
+                JOptionPane.showMessageDialog(this, "Data Tidak Bisa dihapus\nKarena Memiliki Relasi dengan Data Lainnya", "Informasi", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            System.out.println("Tidak Menghapus : " + id);
+        }
+
+        // refresh form
+        refreshForm();
     }//GEN-LAST:event_btnHapusActionPerformed
+
+    private void btnAktifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAktifActionPerformed
+        String status = btnAktif.getText();
+        String id = inputIdUser.getText();
+
+        System.out.println("Memilih ID : " + id);
+
+        if (status.equals("Aktifkan")) {
+            status = "1";
+        } else {
+            status = "0";
+        }
+
+        int dialogButton = JOptionPane.YES_NO_OPTION;
+        int dialogResult;
+        dialogResult = JOptionPane.showConfirmDialog(this, "Anda yakin Ingin Mengubah Status User ini? ", "Konfirmasi", dialogButton);
+
+        if (dialogResult == 0) {
+            String url = Path.serverURL + "/user/status/" + id + "/" + status;
+
+            getDataURL dataurl = new getDataURL();
+
+            try {
+                String data = dataurl.getData(url);
+                System.out.println(data);
+
+                if (data.equals("1")) {
+                    JOptionPane.showMessageDialog(this, "Status Berhasil diubah", "Informasi", JOptionPane.INFORMATION_MESSAGE);
+
+                    System.out.println("Mengubah Status Data ID : " + id);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Status Tidak Berhasil diubah", "Informasi", JOptionPane.ERROR_MESSAGE);
+                }
+
+            } catch (IOException ex) {
+                Logger.getLogger(FormUser.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            System.out.println("Tidak Mengubah Status dari ID : " + id);
+        }
+
+        // refresh form
+        refreshForm();
+
+    }//GEN-LAST:event_btnAktifActionPerformed
+
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
+        refreshForm();
+    }//GEN-LAST:event_btnRefreshActionPerformed
 
     /**
      * @param args the command line arguments
@@ -394,7 +464,7 @@ public class FormUser extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -504,11 +574,22 @@ public class FormUser extends javax.swing.JFrame {
         }
     }
 
-    // function clean Form Pelanggan
+    // function clean Form
     public void cleanFormUser() {
+        inputIdUser.setText("");
         inputNama.setText("");
         inputPassword.setText("");
         inputUsername.setText("");
+    }
+
+    public void refreshForm() {
+        showDataUser();
+        cleanFormUser();
+
+        btnTambah.setEnabled(true);
+        btnUbah.setEnabled(false);
+        btnHapus.setEnabled(false);
+        btnAktif.setEnabled(false);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -516,6 +597,7 @@ public class FormUser extends javax.swing.JFrame {
     private javax.swing.JButton btnFormSewa;
     private javax.swing.JButton btnHapus;
     private javax.swing.JButton btnKeluar;
+    private javax.swing.JButton btnRefresh;
     private javax.swing.JButton btnTambah;
     private javax.swing.JButton btnUbah;
     private javax.swing.JTextField inputIdUser;

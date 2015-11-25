@@ -176,10 +176,7 @@ public class FormSewa extends javax.swing.JFrame {
 
         tblSewa.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "No.", "ID Transaksi", "Tanggal Sewa", "Status"

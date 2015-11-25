@@ -120,40 +120,56 @@ public class FormRegister extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
-        String nama = inputNama.getText().replaceAll(" ", "%20");
+        String nama = inputNama.getText();
+        String nama_filter = nama.replaceAll(" ", "%20");
+
         String username = inputUsername.getText();
-        String password = DigestUtils.md5Hex(inputPassword.getText());
+        String password = inputPassword.getText();
+        String password_hash = DigestUtils.md5Hex(password);
 
         System.out.println("Nama : " + nama);
         System.out.println("Username : " + username);
         System.out.println("Password : " + password);
-        
-        String url = Path.serverURL + "/user/create/" + username + "/" + password + "/" + nama;
 
-        getDataURL dataurl = new getDataURL();
+        if (nama.isEmpty() || username.isEmpty() || password.isEmpty()) {
 
-        try {
+            JOptionPane.showMessageDialog(this, "Data Tidak Boleh Kosong", "Informasi", JOptionPane.ERROR_MESSAGE);
 
-            String data = dataurl.getData(url);
-            System.out.println(data);
+        } else if (username.contains(" ")) {
 
-            if (data.equals("1")) {
+            JOptionPane.showMessageDialog(this, "Username Tidak Boleh Menggunakan Spasi", "Informasi", JOptionPane.ERROR_MESSAGE);
 
-                JOptionPane.showMessageDialog(this, "Registrasi Berhasil,\nSelamat Begabung " + nama, "Informasi", JOptionPane.INFORMATION_MESSAGE);
+        } else {
 
-                FormLogin formCall = new FormLogin();
-                formCall.setLocationRelativeTo(null);
-                formCall.setVisible(true);
-                this.dispose();
+            String url = Path.serverURL + "/user/create/" + username + "/" + password_hash + "/" + nama_filter;
 
-            } else {
+            getDataURL dataurl = new getDataURL();
 
-                JOptionPane.showMessageDialog(this, "Registrasi Gagal\nUsername Sudah digunakan", "Informasi", JOptionPane.ERROR_MESSAGE);
+            try {
 
+                String data = dataurl.getData(url);
+                System.out.println(data);
+
+                if (data.equals("1")) {
+
+                    JOptionPane.showMessageDialog(this, "Registrasi Berhasil,\nSelamat Begabung " + nama, "Informasi", JOptionPane.INFORMATION_MESSAGE);
+
+                    // memanggil form login
+                    FormLogin callForm = new FormLogin();
+                    callForm.setLocationRelativeTo(null);
+                    callForm.setVisible(true);
+
+                    this.dispose();
+
+                } else {
+
+                    JOptionPane.showMessageDialog(this, "Registrasi Gagal\nUsername Sudah digunakan", "Informasi", JOptionPane.ERROR_MESSAGE);
+
+                }
+
+            } catch (IOException ex) {
+                Logger.getLogger(FormRegister.class.getName()).log(Level.SEVERE, null, ex);
             }
-
-        } catch (IOException ex) {
-            Logger.getLogger(FormRegister.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnRegisterActionPerformed
 

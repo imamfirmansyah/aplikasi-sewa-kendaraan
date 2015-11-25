@@ -87,16 +87,16 @@ public class FormKendaraan extends javax.swing.JFrame {
         labelNamaKendaraan.setText("Nama Kendaraan");
 
         btnTambah.setText("Tambah");
-        btnTambah.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnTambahMouseClicked(evt);
+        btnTambah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTambahActionPerformed(evt);
             }
         });
 
         btnRefresh.setText("Refresh");
-        btnRefresh.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnRefreshMouseClicked(evt);
+        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRefreshActionPerformed(evt);
             }
         });
 
@@ -107,18 +107,18 @@ public class FormKendaraan extends javax.swing.JFrame {
         labelBiayaSewa.setText("Biaya Sewa");
 
         btnUbah.setText("Ubah");
-        btnUbah.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnUbahMouseClicked(evt);
+        btnUbah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUbahActionPerformed(evt);
             }
         });
 
         labelIdKendaraan.setText("ID Kendaraan");
 
         btnHapus.setText("Hapus");
-        btnHapus.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnHapusMouseClicked(evt);
+        btnHapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHapusActionPerformed(evt);
             }
         });
 
@@ -232,17 +232,55 @@ public class FormKendaraan extends javax.swing.JFrame {
         showDataKendaraan();
     }//GEN-LAST:event_formWindowActivated
 
-    private void btnTambahMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTambahMouseClicked
+    private void tblKendaraanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKendaraanMouseClicked
+        int row = tblKendaraan.getSelectedRow();
+        String tblKendaraanID = (tblKendaraan.getModel().getValueAt(row, 5).toString());
+        System.out.println("ID Kendaraan : " + tblKendaraanID);
+
+        try {
+            showDataKendaraanById(Integer.parseInt(tblKendaraanID));
+        } catch (ParseException ex) {
+            Logger.getLogger(FormKendaraan.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tblKendaraanMouseClicked
+
+    private void btnKeluarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKeluarMouseClicked
+        int dialogButton = JOptionPane.YES_NO_OPTION;
+        int dialogResult;
+        dialogResult = JOptionPane.showConfirmDialog(this, "Anda Yakin Ingin Keluar? ", "Konfirmasi", dialogButton);
+        if (dialogResult == 0) {
+            System.out.println("Quit");
+            this.dispose();
+        } else {
+            System.out.println("cancel");
+        }
+    }//GEN-LAST:event_btnKeluarMouseClicked
+
+    private void btnFormSewaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFormSewaMouseClicked
+        this.dispose();
+        System.out.println("Panggil Form Sewa");
+
+        // memanggil form Sewa
+        FormSewa callForm = new FormSewa();
+        callForm.setLocationRelativeTo(null);
+        callForm.setVisible(true);
+    }//GEN-LAST:event_btnFormSewaMouseClicked
+
+    private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahActionPerformed
         String noPolisi = inputNoPolisi.getText().replaceAll(" ", "%20");
         String namaKendaraan = inputNamaKendaraan.getText().replaceAll(" ", "%20");
-        String tahunKendaraan = inputTahunKendaraan.getText().replaceAll(" ", "%20");
-        String biayaSewa = inputBiayaSewa.getText().replaceAll(" ", "%20");
+        String tahunKendaraan = inputTahunKendaraan.getText();
+        String biayaSewa = inputBiayaSewa.getText();
 
         btnUbah.setEnabled(false);
-
+        
         if (noPolisi.isEmpty() || namaKendaraan.isEmpty() || tahunKendaraan.isEmpty() || biayaSewa.isEmpty()) {
 
             JOptionPane.showMessageDialog(this, "Data Tidak Boleh Kosong", "Informasi", JOptionPane.ERROR_MESSAGE);
+
+        } else if (isNumeric(biayaSewa) == false || isNumeric(tahunKendaraan) == false ) {
+
+            JOptionPane.showMessageDialog(this, "Masukan Biaya Sewa dan Tahun Kendaraan dengan Angka", "Informasi", JOptionPane.ERROR_MESSAGE);
 
         } else {
 
@@ -265,26 +303,9 @@ public class FormKendaraan extends javax.swing.JFrame {
                 Logger.getLogger(FormKendaraan.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-    }//GEN-LAST:event_btnTambahMouseClicked
+    }//GEN-LAST:event_btnTambahActionPerformed
 
-    private void btnRefreshMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRefreshMouseClicked
-        // munculkan data kendaraan
-        showDataKendaraan();
-    }//GEN-LAST:event_btnRefreshMouseClicked
-
-    private void tblKendaraanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKendaraanMouseClicked
-        int row = tblKendaraan.getSelectedRow();
-        String tblKendaraanID = (tblKendaraan.getModel().getValueAt(row, 5).toString());
-        System.out.println("ID Kendaraan : " + tblKendaraanID);
-
-        try {
-            showDataKendaraanById(Integer.parseInt(tblKendaraanID));
-        } catch (ParseException ex) {
-            Logger.getLogger(FormKendaraan.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_tblKendaraanMouseClicked
-
-    private void btnUbahMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUbahMouseClicked
+    private void btnUbahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUbahActionPerformed
         String idKendaraan = inputIdKendaraan.getText();
         String noPolisi = inputNoPolisi.getText().replaceAll(" ", "%20");
         String namaKendaraan = inputNamaKendaraan.getText().replaceAll(" ", "%20");
@@ -292,12 +313,16 @@ public class FormKendaraan extends javax.swing.JFrame {
         String biayaSewa = inputBiayaSewa.getText().replaceAll(" ", "%20");
 
         btnHapus.setEnabled(false);
-
+        
         if (noPolisi.isEmpty() || namaKendaraan.isEmpty() || tahunKendaraan.isEmpty() || biayaSewa.isEmpty()) {
 
             JOptionPane.showMessageDialog(this, "Data Tidak Boleh Kosong", "Informasi", JOptionPane.ERROR_MESSAGE);
+            
+             btnTambah.setEnabled(false);
+             
+        } else if (isNumeric(biayaSewa) == false || isNumeric(tahunKendaraan) == false ) {
 
-            btnTambah.setEnabled(false);
+            JOptionPane.showMessageDialog(this, "Masukan Biaya Sewa dan Tahun Kendaraan dengan Angka", "Informasi", JOptionPane.ERROR_MESSAGE);
 
         } else {
 
@@ -324,9 +349,9 @@ public class FormKendaraan extends javax.swing.JFrame {
                 Logger.getLogger(FormKendaraan.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-    }//GEN-LAST:event_btnUbahMouseClicked
+    }//GEN-LAST:event_btnUbahActionPerformed
 
-    private void btnHapusMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHapusMouseClicked
+    private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
         String idKendaraan = inputIdKendaraan.getText();
         System.out.println("Memilih ID : " + idKendaraan);
 
@@ -370,29 +395,12 @@ public class FormKendaraan extends javax.swing.JFrame {
         btnTambah.setEnabled(true);
         btnUbah.setEnabled(false);
         btnHapus.setEnabled(false);
-    }//GEN-LAST:event_btnHapusMouseClicked
+    }//GEN-LAST:event_btnHapusActionPerformed
 
-    private void btnKeluarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKeluarMouseClicked
-        int dialogButton = JOptionPane.YES_NO_OPTION;
-        int dialogResult;
-        dialogResult = JOptionPane.showConfirmDialog(this, "Anda Yakin Ingin Keluar? ", "Konfirmasi", dialogButton);
-        if (dialogResult == 0) {
-            System.out.println("Quit");
-            this.dispose();
-        } else {
-            System.out.println("cancel");
-        }
-    }//GEN-LAST:event_btnKeluarMouseClicked
-
-    private void btnFormSewaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFormSewaMouseClicked
-        this.dispose();
-        System.out.println("Panggil Form Sewa");
-
-        // memanggil form Sewa
-        FormSewa callForm = new FormSewa();
-        callForm.setLocationRelativeTo(null);
-        callForm.setVisible(true);
-    }//GEN-LAST:event_btnFormSewaMouseClicked
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
+        // munculkan data kendaraan
+        showDataKendaraan();
+    }//GEN-LAST:event_btnRefreshActionPerformed
 
     /**
      * @param args the command line arguments
@@ -516,6 +524,10 @@ public class FormKendaraan extends javax.swing.JFrame {
         inputNamaKendaraan.setText("");
         inputTahunKendaraan.setText("");
         inputBiayaSewa.setText("");
+    }
+
+    public boolean isNumeric(String s) {
+        return s.matches("[-+]?\\d*\\.?\\d+");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
