@@ -54,7 +54,6 @@ public class FormUser extends javax.swing.JFrame {
         btnTambah = new javax.swing.JButton();
         btnUbah = new javax.swing.JButton();
         btnHapus = new javax.swing.JButton();
-        btnRefresh = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         btnFormSewa = new javax.swing.JButton();
         btnKeluar = new javax.swing.JButton();
@@ -113,13 +112,6 @@ public class FormUser extends javax.swing.JFrame {
             }
         });
 
-        btnRefresh.setText("Refresh");
-        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRefreshActionPerformed(evt);
-            }
-        });
-
         btnFormSewa.setText("Form Sewa");
         btnFormSewa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,11 +157,9 @@ public class FormUser extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnUbah)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnAktif)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnHapus)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnRefresh)))
+                                .addComponent(btnAktif)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnFormSewa, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -178,7 +168,7 @@ public class FormUser extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAktif, btnHapus, btnRefresh, btnTambah, btnUbah});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnHapus, btnTambah, btnUbah});
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnFormSewa, btnKeluar});
 
@@ -206,7 +196,6 @@ public class FormUser extends javax.swing.JFrame {
                     .addComponent(btnTambah)
                     .addComponent(btnUbah)
                     .addComponent(btnHapus)
-                    .addComponent(btnRefresh)
                     .addComponent(btnAktif))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -398,11 +387,6 @@ public class FormUser extends javax.swing.JFrame {
 //        btnHapus.setEnabled(false);
     }//GEN-LAST:event_btnHapusActionPerformed
 
-    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
-        // munculkan data kendaraan
-//        showDataPelanggan();
-    }//GEN-LAST:event_btnRefreshActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -498,6 +482,13 @@ public class FormUser extends javax.swing.JFrame {
             Object nama = getData.get("nama");
             Object username = getData.get("username");
             Object id_pelanggan = getData.get("id");
+            Object status = getData.get("status");
+
+            if (status.equals("0")) {
+                btnAktif.setText("Aktifkan");
+            } else {
+                btnAktif.setText("Non Aktifkan");
+            }
 
             inputNama.setText((String) nama);
             inputUsername.setText((String) username);
@@ -506,6 +497,7 @@ public class FormUser extends javax.swing.JFrame {
             btnTambah.setEnabled(false);
             btnUbah.setEnabled(true);
             btnHapus.setEnabled(true);
+            btnAktif.setEnabled(true);
 
         } catch (IOException ex) {
             Logger.getLogger(FormUser.class.getName()).log(Level.SEVERE, null, ex);
@@ -524,7 +516,6 @@ public class FormUser extends javax.swing.JFrame {
     private javax.swing.JButton btnFormSewa;
     private javax.swing.JButton btnHapus;
     private javax.swing.JButton btnKeluar;
-    private javax.swing.JButton btnRefresh;
     private javax.swing.JButton btnTambah;
     private javax.swing.JButton btnUbah;
     private javax.swing.JTextField inputIdUser;
