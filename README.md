@@ -65,5 +65,9 @@ mvn clean package
 
 Lalu, jalankan `Main.java` dengan cara mengetik :
 ```
-mvn exec:java -Dexec.mainClass=com.firmansyah.imam.aplikasi-sewa-kendaraan.Main
+mvn exec:java -Dexec.mainClass=com.firmansyah.imam.sewa.kendaraan.Main
 ```
+
+Tunggu hingga maven selesai mendownload repositori dependency yang dibutuhkan, jika berhasil maka akan muncul tampilan `Form Login` seperti gambar di bawah ini :
+
+![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/java-client/07-form-login.png "Form Login")
