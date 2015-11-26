@@ -13,7 +13,7 @@ Anda dapat menjalankan Aplikasi ini dari berbagai sistem operasi (Operating Syst
 - [Menggunakan Aplikasi](#menggunakan-aplikasi)
 - [Instalasi Aplikasi Secara Lokal](#menggunakan-local)
 
-## 1. Unduh Aplikasi
+## Unduh Aplikasi
 
 - [Download versi terbaru dari Aplikasi Sewa Kendaraan](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/archive/master.zip).
 - Clone repositori ini : `git clone https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan.git`.
