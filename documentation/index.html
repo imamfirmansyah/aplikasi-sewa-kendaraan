@@ -27,15 +27,8 @@
 								<li><a href="#doc-3-2">Menggunakan Console</a></li>
 							</ul>
 						</li>
-						<li><a href="#doc-4">4. Menggunakan Aplikasi</a>
-							<ul>
-								<li><a href="#">Sub Navigation 1</a></li>
-								<li><a href="#">Sub Navigation 2</a></li>
-								<li><a href="#">Sub Navigation 3</a></li>
-							</ul>
-						</li>
-						<li><a href="#docD">D) PSD Files</a></li>
-						<li><a href="#credits">E) Credits</a></li>
+						<li><a href="#doc-4">4. Menggunakan Aplikasi</a></li>
+						<li><a href="#informasi-kontak">5. Informasi Kontak</a></li>
 					</ul>
 				</div>
 			</div>
@@ -51,13 +44,11 @@
 						Nama : Imam Firmansyah<br />
 						NPM : 4515217015<br />
 						Github : <a href="https://github.com/imamfirmansyah">imamfirmansyah</a> <br>
-						Email 1 : <a href="mailto:hubungi@imamfirmansyah.com">hubungi@imamfirmansyah.com</a> <br>
-						Email 2 : <a href="mailto:imamfirmansyah27@gmail.com">imamfirmansyah27@gmail.com</a>
 					</div>
 				</div>
 				<div id="theme-content-info-description">
 					<div id="theme-content-info-description-body">
-						Ini merupakan dokumentasi dari Aplikasi Java - Sewa Kendaraan, informasi mengenai cara penggunaan, instalasi ada pada dokumentasi ini, jika ada yang ingin ditanyakan silahkan kontak saya melalui email yang sudah tersedia, terima kasih
+						Ini merupakan dokumentasi dari Aplikasi Java - Sewa Kendaraan, informasi mengenai cara penggunaan, instalasi ada pada dokumentasi ini, jika ada yang ingin ditanyakan silahkan kontak saya melalui informasi kontak yang sudah tersedia pada menu <a class="goto" href="#informasi-kontak">Informasi Kontak</a>, terima kasih
 					</div>
 				</div>
 			</div>
@@ -87,12 +78,9 @@
 				<h2 id="doc-2">2. Struktur Database</h2>
 
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Database yang saya gunakan seperti gambar di bawah ini:
+
+					<p><img src="assets/img/database-structure.png"></p>
 				</p>
 
 				<hr>
@@ -137,6 +125,24 @@
 				</p>
 
 				<h3 id="doc-3-2">3.2. Menggunakan Console</h3>
+
+				<p>
+					Pastikan <strong>Maven</strong> sudah terinstal dan siap dijalankan pada komputer anda, lalu untuk menjalankan Maven Melalui Console pertama-tama masuk ke direktori folder tempat kita mengextract file repositori yang telah kita download sebelumnya, masuk ke folder <strong>java-client</strong>					
+				</p>
+
+				<p>
+					Compile dengan mengetik :
+
+					<pre>mvn clean package</pre>
+
+					Setelah proses download selesai, run <code>Main.java</code> dengan perintah
+
+					<pre>mvn exec:java -Dexec.mainClass=com.firmansyah.imam.aplikasi.uts.Main</pre>
+
+					Tunggu hingga maven selesai mendownload repositori dependency yang dibutuhkan,
+					
+					<img src="assets/img/java-client/08-jalankan-console.png">
+				</p>
 				
 				<hr>
 
@@ -213,129 +219,111 @@
 							<p>	
 								Jika kita klik Tombol <strong>Form Pelanggan</strong> akan muncul tampilan seperti gambar di bawah ini:
 								<img src="assets/img/aplikasi/08-form-pelanggan.png">
-								Kita akan coba menginput data, sebagai contoh akan kita menginput data seperti dibawah ini : <br>
+								
+								Kita akan coba menginput data, sebagai contoh kita akan menginput data seperti dibawah ini : <br>
+								<strong>Data yang pertama :</strong> <br>
 								<code>Nama Pelanggan : Imam Firmansyah</code> <br>
 								<code>Alamat : Depok</code> <br>
 								<code>No. Telepon : 085781200013</code> <br>
 								<code>No. Identitas : 123456789</code> <br>
-								Lalu Data yang kedua : <br>
+
+								<strong>Data yang kedua :</strong><br>
 								<code>Nama Pelanggan : Dian Sapta</code> <br>
 								<code>Alamat : Jakarta</code> <br>
 								<code>No. Telepon : 085716607939</code> <br>
 								<code>No. Identitas : 987654321</code> <br>
+								
+								Dan di bawah ini adalah hasil dari data yang telah kita inputkan :
+								<img src="assets/img/aplikasi/09-form-pelanggan-sample-data.png">
 							</p>
+						</li>
+						<li>
+							<p>
+								Kita akan coba menginput Data Kendaraan, klik Tombol <strong>Form Kendaraan</strong> maka akan muncul tampilan seperti di bawah ini :
+								<img src="assets/img/aplikasi/10-form-kendaraan.png">
+
+								Kita akan coba menginput data, sebagai contoh kita akan menginput data seperti dibawah ini : <br>
+								<strong>Data yang pertama :</strong> <br>
+								<code>No. Polisi : B 1234 XYZ</code> <br>
+								<code>Nama Kendaraan : Honda - Jazz</code> <br>
+								<code>Tahun Kendaraan : 2014</code> <br>
+								<code>Biaya Sewa : 250000</code> <br>
+
+								<strong>Data yang kedua :</strong><br>
+								<code>No. Polisi : B 5678 VWX</code> <br>
+								<code>Nama Kendaraan : Toyota - Avanza</code> <br>
+								<code>Tahun Kendaraan : 2015</code> <br>
+								<code>Biaya Sewa : 200000</code> <br>
+								
+								Dan di bawah ini adalah hasil dari data yang telah kita inputkan :
+								<img src="assets/img/aplikasi/11-form-kendaraan-sample-data.png">
+							</p>
+						</li>
+						<li>
+							<p>	
+								Klik Tombol <strong>Form Sewa</strong> maka akan kembali ke Form Sewa, kita bisa mulai menginput data penyewaan kendaraan, klik <strong>Combo Box ID Pelangan</strong> data yang telah kita masukan sebelumnya sudah dapat dipanggil melalui combo box, 
+								<img src="assets/img/aplikasi/12-combo-box-pelanggan.png">
+								
+								Pilih ID Pelanggan maka akan muncul data pelanggan seperti gambar dibawah ini :
+								<img src="assets/img/aplikasi/13-data-pelanggan.png">
+
+								Begitu juga dengan data Kendaraan,
+								<img src="assets/img/aplikasi/14-data-kendaraan.png">
+							</p>
+						</li>
+						<li>
+							<p>
+								Kita akan mencoba menginput data transaksi penyewaan, pilih tanggal awal penyewaan dan tanggal akhir penyewaan, sebagai contoh kita inputkan data seperti gambar di bawah ini :
+								<img src="assets/img/aplikasi/15-data-transaksi.png">
+								
+								Maka pada tabel transaksi akan muncul data yang telah kita inputkan, 
+								<img src="assets/img/aplikasi/16-data-transaksi-sample.png">
+
+								Klik transaksi pada tabel transaksi untuk melihat detail dari transaksi penyewaan yang telah kita inputkan
+								<img src="assets/img/aplikasi/17-detail-transaksi.png">
+
+								Terdapat informasi mengenai transaksi penyewaan kendaraan, diantaranya lamanya waktu, biaya sewa dan kendaraan apa yang di sewa serta identitas pelanggan yang menyewa kendaraan tersebut, fungsi tombol <strong>Sewa Selesai</strong> merupakan tombol yang berfungsi untuk mengganti status dari <strong>Di Sewakan</strong> menjadi <strong>Selesai</strong>
+							</p>
+						</li>
+						<li>
+							Karena <strong>Data Pelanggan, Data Kendaraan</strong> memiliki relasi dengan <strong>Data Transaksi Sewa</strong> maka setiap kendaraan yang telah disewa, status kendaraan akan berganti dari <strong>tersedia</strong> menjadi <strong>tidak tersedia</strong>
 						</li>
 					</ul>
 				</p>
 
+				<hr>
 
-				<p>The second file contains all of the specific stylings for the page. The file is separated into sections using:</p>  
+				<h2 id="informasi-kontak">Informasi Kontak</h2>
 
-				<pre>/* === Header Section === */
-					some code
+				<p>
 
-					/* === Main Section === */
-					some code
+					<ul>
+						<li>Nama : Imam Firmansyah</li>
+						<li>NPM : 4515217015</li>
+						<li>Github : <a href="https://github.com/imamfirmansyah">imamfirmansyah</a></li>
+						<li>Twitter : <a href="https://twitter.com/imamfirman">@imamfirman</a></li>
+						<li>Facebook : <a href="https://facebook.com/imamfirmansyah27">imam firmansyah</a></li>
+						<li>Web : <a href="http://imamfirmansyah.com">imamfirmansyah.com</a></li>
+						<li>Email 1 : <a href="mailto:hubungi@imamfirmansyah.com">hubungi@imamfirmansyah.com</a></li>
+						<li>Email 2 : <a href="mailto:imamfirmansyah27@gmail.com">imamfirmansyah27@gmail.com</a></li>
+					</ul>
+				</p>
 
-					/* === Sidebar Section === */
-					some code
+				<hr>
 
-					/* === Footer === */
-					some code
+				<p class="append-bottom">Imam Firmansyah</p>
 
-					etc, etc.</pre>
+				<a class="goto" href="#theme-content">Back to Top</a>
 
-					<p>If you would like to edit a specific section of the site, simply find the appropriate label in the CSS file, and then scroll down until you find the appropriate style that needs to be edited.</p> 
+				<hr class="space">
 
-					<h3>Table</h3>
-					<table><tbody><tr><th>Table Heading</th><th>Table Heading</th></tr><tr><td>this is a table body and just example</td>
-						<td>this is a table body and just example</td>
-					</tr><tr><td>this is a table body and just example</td>
-					<td>this is a table body and just example</td>
-				</tr><tr><td>this is a table body and just example</td>
-				<td>this is a table body and just example</td>
-			</tr><tr><td>this is a table body and just example</td>
-			<td>this is a table body and just example</td>
-		</tr><tr><td>this is a table body and just example</td>
-		<td>this is a table body and just example</td>
-	</tr></tbody></table>
-
-	<p>Any images that are placed within the blog section have 5px worth of padding and a light bluish background. If you would like to edit the display of these images, find the following section in the style sheet:</p>
-
-	<pre>#primaryContent #blog img {
-		change styles here:
-	}</pre>
-
-	<hr />
-
-	<h3 id="docC">C) JavaScript</h3>
-	<p>This theme imports three Javascript files.</p>
-
-	<ol>
-		<li>jQuery</li>
-		<li>My custom scripts</li>
-		<li>Some plugin</li>
-	</ol>
-
-	<ol>
-		<li>jQuery is a Javascript library that greatly reduces the amount of code that you must write.</li>
-		<li>
-			Most of the animation in this site is carried out from the customs scripts. There are a few functions worth looking over.
-			<pre>[some Javascript goes here...along with an general explanation]
-				[some Javascript goes here...along with an general explanation]
-				[some Javascript goes here...along with an general explanation]
-			</pre>
-		</li>
-		<li>
-			In addition to the custom scripts, I implement a few "tried and true" plugins to create the effects. This plugin is packed, so you won't need to manually edit anything in the file. The only necessary thing to know is how to call the method. For example:
-			<pre>[some Javascript goes here...along with an general explanation]</pre>
-		</li>
-	</ol>
-	<hr />
-
-	<h3 id="docD">D) PSD Files</h3>
-	<p>I've included three psds with this theme:</p>
-
-	<ol>
-		<li>The main layout</li>
-		<li>The header</li>
-		<li>The buttons</li>
-	</ol>
-
-	<p>
-		If you'd like to change the main image in the header, open "header.psd", make the necessary adjustments, and then save the file as "headerBG.png". Do the same for the buttons.
-	</p> 
-
-	<p>Include any more specific information about your psds.</p>
-	<hr />
-
-	<h3 id="credits">E) Sources and Credits</h3>
-
-	<p>I've used the following images, icons or other files as listed.
-
-		<ul>
-			<li>File name from file author</li>
-			<li>File name from file author</li>
-			<li>File name from file author</li>
-			<li>File name from file author</li>
-		</ul>
-		<hr />
-
-		<p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p> 
-
-		<p class="append-bottom">Your Name</p>
-
-		<a href="#">Back to Top</a>
-
-		<hr class="space" />
-
+			</div>
+			<!-- CONTENT -->
+		</div>
 	</div>
-</div>
-<!-- CONTENT -->
-</div>
 
-<!-- JS -->
-<script type="text/javascript" src="assets/js/jquery.js"></script>
-<script type="text/javascript" src="assets/js/index.js"></script>
+	<!-- JS -->
+	<script type="text/javascript" src="assets/js/jquery.js"></script>
+	<script type="text/javascript" src="assets/js/index.js"></script>
 </body>
 </html>
