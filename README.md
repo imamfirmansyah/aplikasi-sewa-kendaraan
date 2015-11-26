@@ -8,7 +8,7 @@ Anda dapat menjalankan Aplikasi ini dari berbagai sistem operasi (Operating Syst
 ## Dokumentasi Penggunaan
 
 - [Unduh Aplikasi](#unduh-aplikasi)
-- [Struktur Data](#strutur-data)
+- [Struktur Data](#struktur-data)
 - [Struktur Database](#struktur-database)
 - [Menggunakan Aplikasi](#menggunakan-aplikasi)
 - [Instalasi Aplikasi Secara Lokal](#menggunakan-local)
