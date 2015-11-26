@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Dokumentasi - Java Aplikasi Sewa Kendaraan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+</head>
+
+<body>
+	<div id="theme-wrapper">
+		<!-- NAVIGATION -->
+		<div id="theme-navigation">
+			<div id="theme-navigation-body">
+				<div id="theme-navigation-heading">
+					<div id="theme-navigation-title">Table of Contents</div>
+					<div class="hidden"><a href="#">Menu</a></div>
+					<div class="clearfix"></div>
+				</div>
+				<div id="theme-navigation-list">
+					<ul>
+						<li><a href="#docA">A. Struktur Data</a></li>
+						<li><a href="#docB">B) CSS Files and Structure</a></li>
+						<li><a href="#docC">C) JavaScript</a>
+							<ul>
+								<li><a href="#">Sub Navigation 1</a></li>
+								<li><a href="#">Sub Navigation 2</a></li>
+								<li><a href="#">Sub Navigation 3</a></li>
+							</ul>
+						</li>
+						<li><a href="#docD">D) PSD Files</a></li>
+						<li><a href="#credits">E) Credits</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- NAVIGATION -->
+
+		<!-- CONTENT -->
+		<div id="theme-content">
+			<div id="theme-content-heading">Dokumentasi - Java Aplikasi Sewa Kendaraan</div>
+			<div id="theme-content-info">
+				<div id="theme-content-info-created">
+					<div id="theme-content-info-created-body">
+						Nama : Imam Firmansyah<br />
+						NPM : 4515217015<br />
+						Email : <a href="mailto:hubungi@imamfirmansyah.com">hubungi@imamfirmansyah.com</a> <br>
+						Email : <a href="mailto:imamfirmansyah27@gmail.com">imamfirmansyah27@gmail.com</a>
+					</div>
+				</div>
+				<div id="theme-content-info-description">
+					<div id="theme-content-info-description-body">
+						Ini merupakan dokumentasi dari Aplikasi Java - Sewa Kendaraan, informasi mengenai cara penggunaan, instalasi ada pada dokumentasi ini, jika ada yang ingin ditanyakan silahkan kontak saya melalui email yang sudah tersedia, terima kasih
+					</div>
+				</div>
+			</div>
+
+			<div id="theme-content-body">
+				<h3 id="docA">A. Struktur Data</h3>
+				<p>
+					This theme is a fixed layout with two columns. All of the information within the main content area is nested within a div with an id of "primaryContent". The sidebar's (column #2) content is within a div with an id of "secondaryContent". The general template structure is the same throughout the template. Here is the general structure.
+				</p>
+
+				<p><img src="assets/img/htmlstructure.png" /></p>
+
+				<p>
+					If you would like to edit the <strong>color</strong>, <strong>font</strong>, or style of any elements in one of these columns, you would do the following:
+				</p>
+
+				<pre>#primaryContent a { color: #someColor; }</pre>
+
+				<p>
+					If you find that your new style is not overriding, it is most likely because of a specificity problem. Scroll down in your CSS file and make sure that there isn't a similar style that has more weight.
+				</p>
+
+				<pre>#wrap #primaryContent a { color: #someColor; }</pre>
+
+				<p>So, to ensure that your new styles are applied, make sure that they carry enough "weight" and that there isn't a style lower in the CSS file that is being applied after yours.</p> 
+
+				<hr />
+
+				<h3 id="docB">B) CSS Files and Structure</h3>
+				<p>
+					I'm using two CSS files in this theme. The first one is a generic reset file. Many browser interpret the default behavior of html elements differently. By using a general reset CSS file, we can work round this. This file also contains some general styling, such as anchor tag colors, font-sizes, etc. Keep in mind, that these values might be overridden somewhere else in the file.
+				</p>
+
+				<p>The second file contains all of the specific stylings for the page. The file is separated into sections using:</p>  
+
+<pre>/* === Header Section === */
+some code
+
+/* === Main Section === */
+some code
+	
+/* === Sidebar Section === */
+some code
+	
+/* === Footer === */
+some code
+	
+etc, etc.</pre>
+		
+				<p>If you would like to edit a specific section of the site, simply find the appropriate label in the CSS file, and then scroll down until you find the appropriate style that needs to be edited.</p> 
+
+				<h3>Table</h3>
+				<table><tbody><tr><th>Table Heading</th><th>Table Heading</th></tr><tr><td>this is a table body and just example</td>
+				<td>this is a table body and just example</td>
+				</tr><tr><td>this is a table body and just example</td>
+				<td>this is a table body and just example</td>
+				</tr><tr><td>this is a table body and just example</td>
+				<td>this is a table body and just example</td>
+				</tr><tr><td>this is a table body and just example</td>
+				<td>this is a table body and just example</td>
+				</tr><tr><td>this is a table body and just example</td>
+				<td>this is a table body and just example</td>
+				</tr></tbody></table>
+
+				<p>Any images that are placed within the blog section have 5px worth of padding and a light bluish background. If you would like to edit the display of these images, find the following section in the style sheet:</p>
+
+<pre>#primaryContent #blog img {
+    change styles here:
+}</pre>
+
+				<hr />
+
+				<h3 id="docC">C) JavaScript</h3>
+				<p>This theme imports three Javascript files.</p>
+		
+				<ol>
+					<li>jQuery</li>
+					<li>My custom scripts</li>
+					<li>Some plugin</li>
+				</ol>
+		  
+				<ol>
+					<li>jQuery is a Javascript library that greatly reduces the amount of code that you must write.</li>
+					<li>
+						Most of the animation in this site is carried out from the customs scripts. There are a few functions worth looking over.
+<pre>[some Javascript goes here...along with an general explanation]
+[some Javascript goes here...along with an general explanation]
+[some Javascript goes here...along with an general explanation]
+</pre>
+					</li>
+					<li>
+						In addition to the custom scripts, I implement a few "tried and true" plugins to create the effects. This plugin is packed, so you won't need to manually edit anything in the file. The only necessary thing to know is how to call the method. For example:
+<pre>[some Javascript goes here...along with an general explanation]</pre>
+					</li>
+				</ol>
+				<hr />
+
+				<h3 id="docD">D) PSD Files</h3>
+				<p>I've included three psds with this theme:</p>
+		
+				<ol>
+					<li>The main layout</li>
+					<li>The header</li>
+					<li>The buttons</li>
+				</ol>
+			
+				<p>
+					If you'd like to change the main image in the header, open "header.psd", make the necessary adjustments, and then save the file as "headerBG.png". Do the same for the buttons.
+				</p> 
+			
+				<p>Include any more specific information about your psds.</p>
+				<hr />
+
+				<h3 id="credits">E) Sources and Credits</h3>
+		
+				<p>I've used the following images, icons or other files as listed.
+				
+				<ul>
+					<li>File name from file author</li>
+					<li>File name from file author</li>
+					<li>File name from file author</li>
+					<li>File name from file author</li>
+				</ul>
+				<hr />
+
+				<p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p> 
+
+				<p class="append-bottom">Your Name</p>
+
+				<a href="#">Back to Top</a>
+
+				<hr class="space" />
+
+			</div>
+		</div>
+		<!-- CONTENT -->
+	</div>
+
+	<!-- JS -->
+	<script type="text/javascript" src="assets/js/jquery.js"></script>
+	<script type="text/javascript" src="assets/js/index.js"></script>
+</body>
+</html>
