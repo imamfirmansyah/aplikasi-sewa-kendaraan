@@ -57,7 +57,7 @@ Aplikasi ini menggunakan 4 tabel, dan struktur database yang digunakan seperti g
 Setelah mengunduh aplikasi ini, pastikan JDK dan Maven telah terinstall dan siap untuk dijalankan, ada 2 cara untuk menjalankan aplikasi ini :
 
 ##### 1. Menggunakan Console
-Pertama-tama masuk ke direktori folder tempat kita menyimpan file repositori yang telah kita download sebelumnya, masuk ke folder `java-client`, Compile dengan cara mengetik :
+⋅⋅⋅ Pertama-tama masuk ke direktori folder tempat kita menyimpan file repositori yang telah kita download sebelumnya, masuk ke folder `java-client`, Compile dengan cara mengetik :
 ```
 mvn clean package
 ```
