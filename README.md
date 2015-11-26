@@ -7,7 +7,7 @@ Anda dapat menjalankan Aplikasi ini dari berbagai sistem operasi (Operating Syst
 
 ## Dokumentasi Penggunaan
 
-- [Unduh Aplikasi](#unduh)
+- [Unduh Aplikasi](#unduh-aplikasi)
 - [Struktur Data](#strutur-data)
 - [Struktur Database](#struktur-database)
 - [Menggunakan Aplikasi](#menggunakan-aplikasi)
@@ -15,5 +15,5 @@ Anda dapat menjalankan Aplikasi ini dari berbagai sistem operasi (Operating Syst
 
 ## Unduh Aplikasi
 
-- [Download versi terbaru dari Aplikasi Sewa Kendaraan](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/archive/master.zip).
-- Clone repositori ini : `git clone https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan.git`.
+- [Download versi terbaru dari Aplikasi Sewa Kendaraan](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/archive/master.zip)
+- Clone repositori ini : `git clone https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan.git`
