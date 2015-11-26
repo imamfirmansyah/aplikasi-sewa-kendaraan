@@ -47,7 +47,10 @@ aplikasi-sewa-kendaraan/
 
 ## Struktur Database
 
-Aplikasi ini menggunakan 4 tabel
+Aplikasi ini menggunakan 4 tabel, dan struktur database yang digunakan seperti gambar di bawah ini :
+
+![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/database-structure.png "Struktur Database")
+
 ##### Tabel User
 | Name  | Type | Extras |
 | ----- |:----:| :------: |
