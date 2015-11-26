@@ -9,7 +9,8 @@ Anda dapat menjalankan Aplikasi ini dari berbagai sistem operasi (Operating Syst
 
 - [Unduh Aplikasi](#unduh-aplikasi)
 - [Struktur Data](#struktur-data)
-- [Struktur Database](#struktur-database)
+- [Database](#database)
+- [Instalasi](#instalasi)
 - [Menggunakan Aplikasi](#menggunakan-aplikasi)
 - [Instalasi Aplikasi Secara Lokal](#menggunakan-local)
 
@@ -45,46 +46,33 @@ aplikasi-sewa-kendaraan/
 `- README.md
 ```
 
-## Struktur Database
+## Database
 
-Aplikasi ini menggunakan 4 tabel
-##### Tabel User
-| Name  | Type | Extras |
-| ----- |:----:| :------: |
-| id  | int | Primary Key   |
-| nama | varchar | - |
-| username | varchar | - |
-| password | text | - |
-| status | char | - |
-| created_at | timestamp | - |
+Aplikasi ini menggunakan 4 tabel, dan struktur database yang digunakan seperti gambar di bawah ini :
 
-##### Tabel Kendaraan
-| Name  | Type | Extras |
-| ----- |:----:| :------: |
-| id  | int | Primary Key   |
-| no_polisi | varchar | - |
-| nama_kendaraan | varchar | - |
-| tahun_kendaraan | varchar | - |
-| biaya_sewa | char | - |
-| status | char | - |
+![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/database-structure.png "Struktur Database")
 
-##### Tabel Pelanggan
-| Name  | Type | Extras |
-| ----- |:----:| :------: |
-| id  | int | Primary Key   |
-| nama_pelanggan | varchar | - |
-| alamt | text | - |
-| no_telp | varchar | - |
-| no_identitas | char | - |
+## Instalasi
 
-##### Tabel Sewa
-| Name  | Type | Extras |
-| ----- |:----:| :------: |
-| id  | int | Primary Key   |
-| tanggal_sewa | timestamp | - |
-| id_pelanggan | int | Foreign Key |
-| tanggal_mulai | date | - |
-| tanggal_akhir | date | - |
-| id_kendaraan | int | Foreign Key
-| status | char | - |
+Setelah mengunduh aplikasi ini, pastikan JDK dan Maven telah terinstall dan siap untuk dijalankan, ada 2 cara untuk menjalankan aplikasi ini :
 
+##### 1. Menggunakan Console
+Pertama-tama masuk ke direktori folder tempat kita menyimpan file repositori yang telah kita download sebelumnya, masuk ke folder `java-client`, Compile dengan cara mengetik :
+```
+mvn clean package
+```
+
+Lalu, jalankan `Main.java` dengan cara mengetik :
+```
+mvn exec:java -Dexec.mainClass=com.firmansyah.imam.sewa.kendaraan.Main
+```
+
+##### 2. Menggunakan IDE Netbean
+'Klik File > Open Project' atau 'Ctrl + Shift + O' untuk membuka project, arahkan ke direktori `java-client`. <br>
+Jalankan 'Main.java' nya dengan cara `klik Run > Run File1 atau `Shift + F6`
+
+Tunggu hingga maven selesai mendownload repositori dependency yang dibutuhkan, jika berhasil maka akan muncul tampilan `Form Login` seperti gambar di bawah ini :
+
+![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/java-client/07-form-login.png "Form Login")
+
+hello
