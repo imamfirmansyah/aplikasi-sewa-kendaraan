@@ -17,3 +17,29 @@ Anda dapat menjalankan Aplikasi ini dari berbagai sistem operasi (Operating Syst
 
 - [Download versi terbaru dari Aplikasi Sewa Kendaraan](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/archive/master.zip)
 - Clone repositori ini : `git clone https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan.git`
+
+## Struktur Data
+```
+aplikasi-sewa-kendaraan/
+|
+|-- documentation
+|   |-- assets/
+|    `-- index.html
+|
+|-- java-client/
+|   |-- src/
+|    `- pom.xml
+|
+|-- java-server/
+|   |-- app/
+|   |   |-- models/
+|   |    `- config.php
+|   |-- vendor/
+|   |-- .htaccess
+|   |-- composer.json
+|   |-- composer.lock
+|   |-- database.sql
+|    `- index.php
+|
+`- README.md
+```
