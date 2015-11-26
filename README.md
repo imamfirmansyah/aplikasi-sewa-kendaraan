@@ -68,8 +68,8 @@ mvn exec:java -Dexec.mainClass=com.firmansyah.imam.sewa.kendaraan.Main
 ```
 
 ##### 2. Menggunakan IDE Netbean
-'Klik File > Open Project' atau 'Ctrl + Shift + O' untuk membuka project, arahkan ke direktori `java-client`. <br>
-Jalankan 'Main.java' nya dengan cara `klik Run > Run File1 atau `Shift + F6`
+`Klik File > Open Project` atau `Ctrl + Shift + O` untuk membuka project, arahkan ke direktori `java-client`. <br>
+Jalankan `Main.java` nya dengan cara `klik Run > Run File1` atau `Shift + F6`
 
 Tunggu hingga maven selesai mendownload repositori dependency yang dibutuhkan, jika berhasil maka akan muncul tampilan `Form Login` seperti gambar di bawah ini :
 
