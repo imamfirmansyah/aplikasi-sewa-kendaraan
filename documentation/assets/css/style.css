@@ -28,6 +28,9 @@ a{
 
 img{
 	max-width: 100%;
+	display: block;
+	margin-bottom: 1em;
+	margin-top: 0.5em;
 }
 
 pre {
@@ -144,9 +147,13 @@ body{
 }
 
 #theme-navigation-list ul li ul{
-	padding:20px 50px;
+	padding: 18px 50px 20px;
 	border-top: 1px solid #424242;
 	list-style: circle;
+}
+
+#theme-navigation-list ul ul li {
+	font-size: 14px;
 }
 
 #theme-navigation-list ul li ul li a{
@@ -156,6 +163,10 @@ body{
 	padding: 0px;
 	margin-bottom: 9px;
 	color: #CBCBCB;
+}
+
+#theme-navigation-list ul li ul li:last-child a{
+	margin-bottom: 0;
 }
 
 #theme-navigation-list ul li ul li a:hover{

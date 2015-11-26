@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Dokumentasi - Java Aplikasi Sewa Kendaraan</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 </head>
 
@@ -13,15 +13,21 @@
 		<div id="theme-navigation">
 			<div id="theme-navigation-body">
 				<div id="theme-navigation-heading">
-					<div id="theme-navigation-title">Table of Contents</div>
+					<div id="theme-navigation-title">Menu</div>
 					<div class="hidden"><a href="#">Menu</a></div>
 					<div class="clearfix"></div>
 				</div>
 				<div id="theme-navigation-list">
 					<ul>
-						<li><a href="#docA">A. Struktur Data</a></li>
-						<li><a href="#docB">B) CSS Files and Structure</a></li>
-						<li><a href="#docC">C) JavaScript</a>
+						<li><a href="#doc-1">1. Struktur Data</a></li>
+						<li><a href="#doc-2">2. Struktur Database</a></li>
+						<li><a href="#doc-3">3. Menjalankan Java Client</a>
+							<ul>
+								<li><a href="#doc-3-1">Menggunakan IDE Netbean</a></li>
+								<li><a href="#doc-3-2">Menggunakan Console</a></li>
+							</ul>
+						</li>
+						<li><a href="#doc-4">4. Menggunakan Aplikasi</a>
 							<ul>
 								<li><a href="#">Sub Navigation 1</a></li>
 								<li><a href="#">Sub Navigation 2</a></li>
@@ -44,8 +50,9 @@
 					<div id="theme-content-info-created-body">
 						Nama : Imam Firmansyah<br />
 						NPM : 4515217015<br />
-						Email : <a href="mailto:hubungi@imamfirmansyah.com">hubungi@imamfirmansyah.com</a> <br>
-						Email : <a href="mailto:imamfirmansyah27@gmail.com">imamfirmansyah27@gmail.com</a>
+						Github : <a href="https://github.com/imamfirmansyah">imamfirmansyah</a> <br>
+						Email 1 : <a href="mailto:hubungi@imamfirmansyah.com">hubungi@imamfirmansyah.com</a> <br>
+						Email 2 : <a href="mailto:imamfirmansyah27@gmail.com">imamfirmansyah27@gmail.com</a>
 					</div>
 				</div>
 				<div id="theme-content-info-description">
@@ -56,141 +63,279 @@
 			</div>
 
 			<div id="theme-content-body">
-				<h3 id="docA">A. Struktur Data</h3>
+				<h2 id="doc-1">1. Struktur Data</h2>
 				<p>
-					This theme is a fixed layout with two columns. All of the information within the main content area is nested within a div with an id of "primaryContent". The sidebar's (column #2) content is within a div with an id of "secondaryContent". The general template structure is the same throughout the template. Here is the general structure.
+					Sebelum menggunakan aplikasi ini, silahkan download terlebih dahulu file yang yang ada di repositori github <a href="https://github.com/imamfirmansyah/Java-Aplikasi-Sewa-Kendaraan">Java Aplikasi Sewa Kendaraan</a> atau bisa langsung mendownload repositorinya <a href="https://github.com/imamfirmansyah/Java-Aplikasi-Sewa-Kendaraan/archive/master.zip">di sini</a>
+				</p>
+				<p>
+					Setelah selesai mendownload, Extract <strong>Java-Aplikasi-Sewa-Kendaraan-master.zip</strong>, data pada file tersebut terdiri dari folder documentation, java-client, java-server, dan file README.md
 				</p>
 
-				<p><img src="assets/img/htmlstructure.png" /></p>
-
+				<p><img src="assets/img/struktur-data.png"></p>
+				
 				<p>
-					If you would like to edit the <strong>color</strong>, <strong>font</strong>, or style of any elements in one of these columns, you would do the following:
+					<ul>
+						<li>Folder documentation : berisi tentang <strong>dokumentasi penggunaan</strong></li>
+						<li>Folder java-client : berisi tentang <strong>aplikasi java</strong> penyewaan kendaraan </li>
+						<li>Folder java-server : berisi tentang <strong>file php untuk server</strong> aplikasi java penyewaan kendaraan</li>
+						<li>File README.md : Readme.md </li>
+					</ul>
 				</p>
 
-				<pre>#primaryContent a { color: #someColor; }</pre>
+				<hr>
+				
+				<h2 id="doc-2">2. Struktur Database</h2>
 
 				<p>
-					If you find that your new style is not overriding, it is most likely because of a specificity problem. Scroll down in your CSS file and make sure that there isn't a similar style that has more weight.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 				</p>
 
-				<pre>#wrap #primaryContent a { color: #someColor; }</pre>
+				<hr>
 
-				<p>So, to ensure that your new styles are applied, make sure that they carry enough "weight" and that there isn't a style lower in the CSS file that is being applied after yours.</p> 
+				<h2 id="doc-3">3. Menjalankan Java Client</h2>
 
-				<hr />
+				<h3 id="doc-3-1">3.1. Menggunakan IDE Netbean</h3>
 
-				<h3 id="docB">B) CSS Files and Structure</h3>
 				<p>
-					I'm using two CSS files in this theme. The first one is a generic reset file. Many browser interpret the default behavior of html elements differently. By using a general reset CSS file, we can work round this. This file also contains some general styling, such as anchor tag colors, font-sizes, etc. Keep in mind, that these values might be overridden somewhere else in the file.
+					Untuk memudahkan, saya menggunakan IDE Netbean untuk menjalankan java client, namun sebelum menjalankan pastikan <strong>Maven</strong> sudah terinstal dan siap dijalankan pada komputer anda.
+
+					<ul>
+						<li>
+							Dalam dokumentasi ini saya menggunakan Windows dengan Netbean versi 8.1, silahkan menyesuaikan dengan versi netbean yang anda miliki
+							<img src="assets/img/java-client/01-jalankan-netbean.png">
+						</li>
+						<li>
+							Klik <code>File > Open Project </code> atau <code>Ctrl + Shift + O</code> untuk membuka project java maven dan arahkan pada direktori folder tempat kita mengextract file repositori yang telah kita download sebelumnya
+							<img src="assets/img/java-client/02-open-project.png">
+							<img src="assets/img/java-client/03-open-file.png">
+						</li>
+						<li>
+							Jika terdapat error seperti gambar di bawah ini, berarti repositori <strong>dependency</strong> yang dipanggil pada <code>pom.xml</code> belum dimiliki oleh repositori maven pada komputer anda, 
+							<img src="assets/img/java-client/04-error-project.png">
+						</li>
+						<li>
+							Untuk mengatasi error tersebut, jalankan saja <code>Main.java</code> nya maka, maven akan otomatis mendownload repositori yang dibutuhkan. Untuk menjalankannya, buka file <code>Main.java</code> lalu klik <code>Run > Run File</code> atau <code>Shift + F6</code>
+							<img src="assets/img/java-client/05-run-project.png">
+						</li>
+						<li>
+							Pastikan anda terkoneksi dengan internet, agar maven dapat mendownload dependency yang dibutuhkan, dan berikut adalah tampilan saat proses download repositorinya
+							<img src="assets/img/java-client/06-proses-download-repo.png">
+						</li>
+						<li>
+							Jika proses download sudah selesai maka akan muncul <strong>Form Login</strong> untuk masuk ke Aplikasi Penyewaan Kendaraan
+							<img src="assets/img/java-client/07-form-login.png">
+						</li>
+						<li>
+							Aplikasi telah siap untuk dijalankan
+						</li>
+					</ul>
 				</p>
+
+				<h3 id="doc-3-2">3.2. Menggunakan Console</h3>
+				
+				<hr>
+
+				<h2 id="doc-4">4. Menggunakan Aplikasi</h2>
+
+				<p>
+					Untuk menjalankan Aplikasi Penyewaan Kendaraan, ikuti langkah-langkah pada tahapan <a class="goto" href="#doc-3">3. Menjalankan Java Client</a>, jika sudah muncul <strong>Form Login</strong> maka Aplikasi siap untuk dijalankan
+
+					<ul>
+						<li>
+							<p>		
+								<strong>Langkah Pertama</strong> yang harus kita lakukan adalah mendaftar terlebih dahulu, klik <strong>Tombol Register</strong> untuk mendaftar, lalu akan muncul <strong>Form Register</strong> seperti gambar dibawah ini :
+								<img src="assets/img/aplikasi/01-form-register.png">
+							</p>
+						</li>
+						<li>
+							<p>	
+								Masukkan <strong>Nama, Username, dan Password</strong> untuk contoh saya menginput : <br>
+								<code>Nama : administrator</code> <br>
+								<code>Username : admin</code> <br>
+								<code>Password : admin</code> <br>
+
+								Jika Berhasil maka akan muncul notifikasi seperti ini : 
+								<img src="assets/img/aplikasi/02-register-berhasil.png">
+							</p>
+						</li>
+						<li>
+							<p>	
+								Login dengan <strong>username</strong> dan <strong>password</strong> yang telah dibuat sebelumnya, Jika Login Berhasil maka akan muncul notifikasi seperti ini : 
+								<img src="assets/img/aplikasi/03-login-berhasil.png">
+							</p>
+						</li>
+						<li>
+							<p>	
+								Berikut ini adalah tampilan utama Aplikasi Penyewaan Kendaraan
+								<img src="assets/img/aplikasi/04-form-utama.png">
+							</p>
+						</li>
+						<li>
+							<p>
+								Ada 3 bagian utama dalam <strong>Form Sewa</strong>
+								<img src="assets/img/aplikasi/05-form-utama-deskripsi.png">
+							</p>
+							
+							<p>	
+								Area yang <strong>Berwarna Biru</strong> merupakan bagian untuk menyimpan transaksi penyewaan, <strong>ID Pelanggan</strong> merupakan data yang otomatis dimunculkan sesuai dengan data pelanggan yang akan kita inputkan pada <strong>Form Pelanggan</strong>, begitu juga dengan <strong>ID Kendaraan</strong> yang otomatis akan dimunculkan sesuai dengan data kendaraan yang kita inputkan pada <strong>Form Kendaraan.</strong> <br>
+							</p>
+							
+							<p>	
+								Area yang <strong>Berwarna Merah</strong> merupakan <strong>tabel hasil penyimpanan data transaksi</strong> dari area yang <strong>Berwarna Biru</strong>
+							</p>
+
+							<p>
+								Area yang <strong>Berwarna Kuning</strong> merupakan <strong>area tombol</strong> yang memiliki fungsinya masing-masing, untuk tombol : <br>
+								- <strong>Simpan Transaksi</strong> digunakan untuk menyimpan transaksi dari area <strong>Berwarna Biru</strong><br>
+								- <strong>Form User</strong> digunakan untuk memanggil <strong>Form User</strong> <br>
+								- <strong>Form Kendaraan</strong> digunakan untuk memanggil <strong>Form Kendaraan</strong> <br>
+								- <strong>Form Pelanggan</strong> digunakan untuk memanggil <strong>Form Pelanggan</strong> <br>
+								- <strong>Form Keluar</strong> digunakan untuk <strong>Keluar dari Aplikasi</strong> <br>
+							</p>
+						</li>
+						<li>
+							<p>	
+								Jika kita klik Tombol <strong>Form User</strong> akan muncul tampilan seperti gambar di bawah ini:
+								<img src="assets/img/aplikasi/06-form-user.png">
+							</p>
+
+							<p>
+								Kita bisa menambahkan <strong>Username baru</strong> agar dapat mengakses aplikasi ini melalui Form Login, dan untuk <strong>Ubah, Hapus, dan Non Aktifkan Username</strong> kita harus klik terlebih dahulu username yang ada pada tabel, seperti gambar dibawah ini :
+								<img src="assets/img/aplikasi/07-select-user.png">
+							</p>
+						</li>
+						<li>
+							<p>	
+								Jika kita klik Tombol <strong>Form Pelanggan</strong> akan muncul tampilan seperti gambar di bawah ini:
+								<img src="assets/img/aplikasi/08-form-pelanggan.png">
+								Kita akan coba menginput data, sebagai contoh akan kita menginput data seperti dibawah ini : <br>
+								<code>Nama Pelanggan : Imam Firmansyah</code> <br>
+								<code>Alamat : Depok</code> <br>
+								<code>No. Telepon : 085781200013</code> <br>
+								<code>No. Identitas : 123456789</code> <br>
+								Lalu Data yang kedua : <br>
+								<code>Nama Pelanggan : Dian Sapta</code> <br>
+								<code>Alamat : Jakarta</code> <br>
+								<code>No. Telepon : 085716607939</code> <br>
+								<code>No. Identitas : 987654321</code> <br>
+							</p>
+						</li>
+					</ul>
+				</p>
+
 
 				<p>The second file contains all of the specific stylings for the page. The file is separated into sections using:</p>  
 
-<pre>/* === Header Section === */
-some code
+				<pre>/* === Header Section === */
+					some code
 
-/* === Main Section === */
-some code
-	
-/* === Sidebar Section === */
-some code
-	
-/* === Footer === */
-some code
-	
-etc, etc.</pre>
-		
-				<p>If you would like to edit a specific section of the site, simply find the appropriate label in the CSS file, and then scroll down until you find the appropriate style that needs to be edited.</p> 
+					/* === Main Section === */
+					some code
 
-				<h3>Table</h3>
-				<table><tbody><tr><th>Table Heading</th><th>Table Heading</th></tr><tr><td>this is a table body and just example</td>
-				<td>this is a table body and just example</td>
+					/* === Sidebar Section === */
+					some code
+
+					/* === Footer === */
+					some code
+
+					etc, etc.</pre>
+
+					<p>If you would like to edit a specific section of the site, simply find the appropriate label in the CSS file, and then scroll down until you find the appropriate style that needs to be edited.</p> 
+
+					<h3>Table</h3>
+					<table><tbody><tr><th>Table Heading</th><th>Table Heading</th></tr><tr><td>this is a table body and just example</td>
+						<td>this is a table body and just example</td>
+					</tr><tr><td>this is a table body and just example</td>
+					<td>this is a table body and just example</td>
 				</tr><tr><td>this is a table body and just example</td>
 				<td>this is a table body and just example</td>
-				</tr><tr><td>this is a table body and just example</td>
-				<td>this is a table body and just example</td>
-				</tr><tr><td>this is a table body and just example</td>
-				<td>this is a table body and just example</td>
-				</tr><tr><td>this is a table body and just example</td>
-				<td>this is a table body and just example</td>
-				</tr></tbody></table>
+			</tr><tr><td>this is a table body and just example</td>
+			<td>this is a table body and just example</td>
+		</tr><tr><td>this is a table body and just example</td>
+		<td>this is a table body and just example</td>
+	</tr></tbody></table>
 
-				<p>Any images that are placed within the blog section have 5px worth of padding and a light bluish background. If you would like to edit the display of these images, find the following section in the style sheet:</p>
+	<p>Any images that are placed within the blog section have 5px worth of padding and a light bluish background. If you would like to edit the display of these images, find the following section in the style sheet:</p>
 
-<pre>#primaryContent #blog img {
-    change styles here:
-}</pre>
+	<pre>#primaryContent #blog img {
+		change styles here:
+	}</pre>
 
-				<hr />
+	<hr />
 
-				<h3 id="docC">C) JavaScript</h3>
-				<p>This theme imports three Javascript files.</p>
-		
-				<ol>
-					<li>jQuery</li>
-					<li>My custom scripts</li>
-					<li>Some plugin</li>
-				</ol>
-		  
-				<ol>
-					<li>jQuery is a Javascript library that greatly reduces the amount of code that you must write.</li>
-					<li>
-						Most of the animation in this site is carried out from the customs scripts. There are a few functions worth looking over.
-<pre>[some Javascript goes here...along with an general explanation]
-[some Javascript goes here...along with an general explanation]
-[some Javascript goes here...along with an general explanation]
-</pre>
-					</li>
-					<li>
-						In addition to the custom scripts, I implement a few "tried and true" plugins to create the effects. This plugin is packed, so you won't need to manually edit anything in the file. The only necessary thing to know is how to call the method. For example:
-<pre>[some Javascript goes here...along with an general explanation]</pre>
-					</li>
-				</ol>
-				<hr />
+	<h3 id="docC">C) JavaScript</h3>
+	<p>This theme imports three Javascript files.</p>
 
-				<h3 id="docD">D) PSD Files</h3>
-				<p>I've included three psds with this theme:</p>
-		
-				<ol>
-					<li>The main layout</li>
-					<li>The header</li>
-					<li>The buttons</li>
-				</ol>
-			
-				<p>
-					If you'd like to change the main image in the header, open "header.psd", make the necessary adjustments, and then save the file as "headerBG.png". Do the same for the buttons.
-				</p> 
-			
-				<p>Include any more specific information about your psds.</p>
-				<hr />
+	<ol>
+		<li>jQuery</li>
+		<li>My custom scripts</li>
+		<li>Some plugin</li>
+	</ol>
 
-				<h3 id="credits">E) Sources and Credits</h3>
-		
-				<p>I've used the following images, icons or other files as listed.
-				
-				<ul>
-					<li>File name from file author</li>
-					<li>File name from file author</li>
-					<li>File name from file author</li>
-					<li>File name from file author</li>
-				</ul>
-				<hr />
+	<ol>
+		<li>jQuery is a Javascript library that greatly reduces the amount of code that you must write.</li>
+		<li>
+			Most of the animation in this site is carried out from the customs scripts. There are a few functions worth looking over.
+			<pre>[some Javascript goes here...along with an general explanation]
+				[some Javascript goes here...along with an general explanation]
+				[some Javascript goes here...along with an general explanation]
+			</pre>
+		</li>
+		<li>
+			In addition to the custom scripts, I implement a few "tried and true" plugins to create the effects. This plugin is packed, so you won't need to manually edit anything in the file. The only necessary thing to know is how to call the method. For example:
+			<pre>[some Javascript goes here...along with an general explanation]</pre>
+		</li>
+	</ol>
+	<hr />
 
-				<p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p> 
+	<h3 id="docD">D) PSD Files</h3>
+	<p>I've included three psds with this theme:</p>
 
-				<p class="append-bottom">Your Name</p>
+	<ol>
+		<li>The main layout</li>
+		<li>The header</li>
+		<li>The buttons</li>
+	</ol>
 
-				<a href="#">Back to Top</a>
+	<p>
+		If you'd like to change the main image in the header, open "header.psd", make the necessary adjustments, and then save the file as "headerBG.png". Do the same for the buttons.
+	</p> 
 
-				<hr class="space" />
+	<p>Include any more specific information about your psds.</p>
+	<hr />
 
-			</div>
-		</div>
-		<!-- CONTENT -->
+	<h3 id="credits">E) Sources and Credits</h3>
+
+	<p>I've used the following images, icons or other files as listed.
+
+		<ul>
+			<li>File name from file author</li>
+			<li>File name from file author</li>
+			<li>File name from file author</li>
+			<li>File name from file author</li>
+		</ul>
+		<hr />
+
+		<p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p> 
+
+		<p class="append-bottom">Your Name</p>
+
+		<a href="#">Back to Top</a>
+
+		<hr class="space" />
+
 	</div>
+</div>
+<!-- CONTENT -->
+</div>
 
-	<!-- JS -->
-	<script type="text/javascript" src="assets/js/jquery.js"></script>
-	<script type="text/javascript" src="assets/js/index.js"></script>
+<!-- JS -->
+<script type="text/javascript" src="assets/js/jquery.js"></script>
+<script type="text/javascript" src="assets/js/index.js"></script>
 </body>
 </html>

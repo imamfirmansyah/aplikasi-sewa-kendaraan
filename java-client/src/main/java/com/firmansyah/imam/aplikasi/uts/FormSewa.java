@@ -637,7 +637,7 @@ public class FormSewa extends javax.swing.JFrame {
 
             model.setRowCount(0);
 
-            String url = Path.serverURL + "/sewa/show";
+            String url = Path.serverURL + "/sewa/show/";
 
             String data = dataurl.getData(url);
 

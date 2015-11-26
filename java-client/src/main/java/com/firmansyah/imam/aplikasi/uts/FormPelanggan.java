@@ -440,7 +440,7 @@ public class FormPelanggan extends javax.swing.JFrame {
 
             model.setRowCount(0);
 
-            String url = Path.serverURL + "/pelanggan/show";
+            String url = Path.serverURL + "/pelanggan/show/";
 
             String data = dataurl.getData(url);
 

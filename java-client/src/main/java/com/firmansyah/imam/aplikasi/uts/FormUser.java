@@ -501,7 +501,7 @@ public class FormUser extends javax.swing.JFrame {
 
             model.setRowCount(0);
 
-            String url = Path.serverURL + "/user/show";
+            String url = Path.serverURL + "/user/show/";
 
             String data = dataurl.getData(url);
 

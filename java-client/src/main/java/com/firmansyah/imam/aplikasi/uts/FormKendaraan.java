@@ -445,7 +445,7 @@ public class FormKendaraan extends javax.swing.JFrame {
 
             model.setRowCount(0);
 
-            String url = Path.serverURL + "/kendaraan/show";
+            String url = Path.serverURL + "/kendaraan/show/";
 
             String data = dataurl.getData(url);
 
