@@ -74,5 +74,3 @@ Jalankan 'Main.java' nya dengan cara `klik Run > Run File1 atau `Shift + F6`
 Tunggu hingga maven selesai mendownload repositori dependency yang dibutuhkan, jika berhasil maka akan muncul tampilan `Form Login` seperti gambar di bawah ini :
 
 ![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/java-client/07-form-login.png "Form Login")
-
-hello
