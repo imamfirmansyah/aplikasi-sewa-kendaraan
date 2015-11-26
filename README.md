@@ -19,6 +19,7 @@ Anda dapat menjalankan Aplikasi ini dari berbagai sistem operasi (Operating Syst
 - Clone repositori ini : `git clone https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan.git`
 
 ## Struktur Data
+
 ```
 aplikasi-sewa-kendaraan/
 |
@@ -43,3 +44,47 @@ aplikasi-sewa-kendaraan/
 |
 `- README.md
 ```
+
+## Struktur Database
+
+Aplikasi ini menggunakan 4 tabel
+##### Tabel User
+| Name  | Type | Extras |
+| ----- |:----:| :------: |
+| id  | int | Primary Key   |
+| nama | varchar | - |
+| username | varchar | - |
+| password | text | - |
+| status | char | - |
+| created_at | timestamp | - |
+
+##### Tabel Kendaraan
+| Name  | Type | Extras |
+| ----- |:----:| :------: |
+| id  | int | Primary Key   |
+| no_polisi | varchar | - |
+| nama_kendaraan | varchar | - |
+| tahun_kendaraan | varchar | - |
+| biaya_sewa | char | - |
+| status | char | - |
+
+##### Tabel Pelanggan
+| Name  | Type | Extras |
+| ----- |:----:| :------: |
+| id  | int | Primary Key   |
+| nama_pelanggan | varchar | - |
+| alamt | text | - |
+| no_telp | varchar | - |
+| no_identitas | char | - |
+
+##### Tabel Sewa
+| Name  | Type | Extras |
+| ----- |:----:| :------: |
+| id  | int | Primary Key   |
+| tanggal_sewa | timestamp | - |
+| id_pelanggan | int | Foreign Key |
+| tanggal_mulai | date | - |
+| tanggal_akhir | date | - |
+| id_kendaraan | int | Foreign Key
+| status | char | - |
+
