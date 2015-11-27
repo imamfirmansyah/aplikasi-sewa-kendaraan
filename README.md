@@ -15,6 +15,8 @@ Anda dapat menjalankan Aplikasi ini dari berbagai sistem operasi (Operating Syst
 - [Instalasi Server Aplikasi Secara Lokal](#instalasi-server-aplikasi-secara-lokal)
 - [Informasi Kontak](#informasi-kontak)
 
+Dokumentasi Penggunaan juga bisa anda lihat pada folder `documentation` atau bisa melalui Dokumentasi Online pada [link ini](http://kuliah.imamfirmansyah.com/documentation/)
+
 ## Unduh Aplikasi
 
 - [Download versi terbaru dari Aplikasi Sewa Kendaraan](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/archive/master.zip)
@@ -273,7 +275,9 @@ Anda juga dapat menjalankan aplikasi ini secara lokal melalui jaringan lokal yan
 
 ## Informasi Kontak
 
-Terima Kasih, Jika ada pertanyaan mengenai Aplikasi Sewa Kendaraan, silahkan hubungi saya melalui informasi kontak di bawah ini : <br>
+Terima Kasih, <br>
+Jika ada pertanyaan mengenai Aplikasi Sewa Kendaraan silahkan hubungi saya melalui informasi kontak di bawah ini : <br><br>
+
 Facebook : [Imam Firmansyah](https://facebook.com/imamfirmansyah27) <br> 
 Github 	: [https://github.com/imamfirmansyah](https://github.com/imamfirmansyah) <br>
 Twitter	: [@imamfirman](https://twitter.com/imamfirman) <br>
