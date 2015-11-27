@@ -42,6 +42,14 @@ pre {
 	word-wrap: break-word;
 }
 
+code {
+	padding: 0.2em 0.3em;
+    margin: 0;
+    font-size: 85%;
+    background-color: rgba(0,0,0,0.04);
+    border-radius: 3px;
+}
+
 hr {
 	background: #ddd;
 	color: #ddd;

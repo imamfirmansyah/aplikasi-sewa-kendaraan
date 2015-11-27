@@ -79,15 +79,17 @@ Setelah mengunduh aplikasi ini, pastikan JDK dan Maven telah terinstall dan siap
 
 2. **Menggunakan IDE Netbean** <br>
 	`Klik File > Open Project` atau `Ctrl + Shift + O` untuk membuka project, arahkan ke direktori `java-client`. <br>
-	Jalankan `Main.java` nya dengan cara `klik Run > Run File1` atau `Shift + F6`
+	Jalankan `Main.java` nya dengan cara `klik Run > Run File` atau `Shift + F6`
 
-	Tunggu hingga maven selesai mendownload repositori dependency yang dibutuhkan, jika berhasil maka akan muncul tampilan `Form Login` seperti gambar di bawah ini :
+	Tunggu hingga maven selesai mendownload repositori dependency yang dibutuhkan
 
-	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/java-client/07-form-login.png "Form Login")
-
-3. **Menjalankan aplikasi-sewa-kendaraan-1.0.jar** <br>
+3. **Menjalankan .jar** <br>
 
 	Buka folder `target` yang ada pada folder `java-client`, lalu jalankan file `aplikasi-sewa-kendaraan-1.0.jar`
+
+Jika Proses Instalasi berhasil maka akan muncul tampilan `Form Login` seperti gambar di bawah ini :
+
+![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/java-client/01-form-login.png "Form Login")
 
 ## Menggunakan Aplikasi
 
@@ -115,7 +117,7 @@ Setelah tahap [instalasi](#instalasi) selesai dan aplikasi telah berhasil dijala
 
 	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/04-form-utama.png "Form Sewa")
 
-5. Ada **3 bagian** utama dalam Form Sewa
+5. Ada **3 bagian** utama dalam `Form Sewa`
 
 	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/05-form-utama-deskripsi.png "Deskripsi Form Sewa")
 
@@ -134,11 +136,11 @@ Setelah tahap [instalasi](#instalasi) selesai dan aplikasi telah berhasil dijala
 
 	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/06-form-user.png "Form User")
 
-	Kita bisa menambahkan **Username** baru agar dapat mengakses aplikasi ini melalui `Form Login`, dan untuk **Ubah, Hapus, dan Non Aktifkan Username** kita harus klik terlebih dahulu data yang ada pada tabel, setelah diklik makan kolom input akan otomatis terisi seperti gambar dibawah ini :
+	Kita bisa menambahkan **Username** baru agar dapat mengakses aplikasi ini melalui `Form Login`, dan untuk **Ubah, Hapus, dan Non Aktifkan Username** kita harus klik terlebih dahulu data yang ada pada tabel, setelah diklik maka kolom input akan otomatis terisi seperti gambar dibawah ini :
 
 	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/07-select-user.png "Select User")
 
-	Tombol **Non Aktif** dipergunakan untuk menonaktifkan dan mengaktifkan `username`, jika status username **Non Aktif** maka username **tidak dapat login**
+	Tombol **Non Aktifkan** dipergunakan untuk menonaktifkan dan mengaktifkan `username`, jika status username **Non Aktif** maka username **tidak dapat login**
 
 	Klik Tombol **Form Sewa** untuk kembali ke `Form Sewa`
 
@@ -188,11 +190,11 @@ Setelah tahap [instalasi](#instalasi) selesai dan aplikasi telah berhasil dijala
 
 	Klik Tombol **Form Sewa** untuk kembali ke `Form Sewa`
 
-9. Klik Tombol **Form Sewa** maka akan kembali ke `Form Sewa`
-	kita bisa mulai menginput data penyewaan kendaraan, klik **Combo Box ID Pelangan** data yang telah kita masukan sebelumnya sudah dapat dipanggil melalui combo box,
+9. Kita bisa mulai menginput data penyewaan kendaraan, klik **Combo Box ID Pelangan** data yang telah kita masukan sebelumnya sudah dapat dipanggil melalui combo box,
 	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/12-combo-box-pelanggan.png "Combo Box ID Pelanggan") <br>
 
-	Pilih ID Pelanggan maka akan muncul data pelanggan seperti gambar dibawah ini, sebagai contoh kita memilih **ID Pelanggan 1**<br>
+	Pilih ID Pelanggan maka akan muncul data pelanggan seperti gambar dibawah ini, <br>
+	sebagai contoh kita memilih **ID Pelanggan 1**<br>
 	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/13-data-pelanggan.png "Combo Box Data Pelanggan") <br>
 
 	Begitu juga dengan **ID Kendaraan**,
@@ -213,7 +215,7 @@ Setelah tahap [instalasi](#instalasi) selesai dan aplikasi telah berhasil dijala
 	
 	Terdapat informasi mengenai transaksi penyewaan kendaraan, diantaranya lamanya waktu, biaya sewa dan kendaraan apa yang di sewa serta identitas pelanggan yang menyewa kendaraan tersebut, fungsi tombol **Sewa Selesai** merupakan tombol yang berfungsi untuk mengganti status dari **Di Sewakan** menjadi **Selesai**
 
-11. Karena **Data Pelanggan, Data Kendaraan** memiliki relasi dengan **Data Transaksi** Sewa maka setiap kendaraan yang telah disewa, status kendaraan akan berganti dari **Tersedia** menjadi **Tidak Tersedia**
+11. Karena **Data Pelanggan, Data Kendaraan** memiliki relasi dengan **Data Transaksi Sewa** maka setiap kendaraan yang telah disewa, status kendaraan akan berganti dari **Tersedia** menjadi **Tidak Tersedia**
 
 12. Klik tombol **Keluar** untuk keluar dari aplikasi
 

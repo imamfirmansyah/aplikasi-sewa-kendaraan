@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>Dokumentasi - Java Aplikasi Sewa Kendaraan</title>
+	<title>Dokumentasi Penggunaan - Java Aplikasi Sewa Kendaraan</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 </head>
@@ -13,21 +13,24 @@
 		<div id="theme-navigation">
 			<div id="theme-navigation-body">
 				<div id="theme-navigation-heading">
-					<div id="theme-navigation-title">Menu</div>
+					<div id="theme-navigation-title">Dokumentasi Penggunaan</div>
 					<div class="hidden"><a href="#">Menu</a></div>
 					<div class="clearfix"></div>
 				</div>
 				<div id="theme-navigation-list">
 					<ul>
-						<li><a href="#doc-1">1. Struktur Data</a></li>
-						<li><a href="#doc-2">2. Struktur Database</a></li>
-						<li><a href="#doc-3">3. Menjalankan Java Client</a>
+						<li><a href="#unduh-aplikasi">Unduh Aplikasi</a></li>
+						<li><a href="#struktur-data">Struktur Data</a></li>
+						<li><a href="#struktur-database">Struktur Database</a></li>
+						<li><a href="#instalasi">Instalasi</a>
 							<ul>
-								<li><a href="#doc-3-1">Menggunakan IDE Netbean</a></li>
-								<li><a href="#doc-3-2">Menggunakan Console</a></li>
+								<li><a href="#menggunakan-console">Menggunakan Console</a></li>
+								<li><a href="#menggunakan-netbean">Menggunakan IDE Netbean</a></li>
+								<li><a href="#menjalankan-jar">Menjalankan .jar</a></li>
 							</ul>
 						</li>
-						<li><a href="#doc-4">4. Menggunakan Aplikasi</a></li>
+						<li><a href="#menggunakan-aplikasi">Menggunakan Aplikasi</a></li>
+						<li><a href="#instalasi-server-aplikasi-secara-lokal">Instalasi Server Aplikasi Secara Lokal</a></li>
 						<li><a href="#informasi-kontak">5. Informasi Kontak</a></li>
 					</ul>
 				</div>
@@ -41,28 +44,63 @@
 			<div id="theme-content-info">
 				<div id="theme-content-info-created">
 					<div id="theme-content-info-created-body">
-						Nama : Imam Firmansyah<br />
-						NPM : 4515217015<br />
+						Nama : Imam Firmansyah<br>
+						NPM : 4515217015<br>
 						Github : <a href="https://github.com/imamfirmansyah">imamfirmansyah</a> <br>
 					</div>
 				</div>
 				<div id="theme-content-info-description">
 					<div id="theme-content-info-description-body">
-						Ini merupakan dokumentasi dari Aplikasi Java - Sewa Kendaraan, informasi mengenai cara penggunaan, instalasi ada pada dokumentasi ini, jika ada yang ingin ditanyakan silahkan kontak saya melalui informasi kontak yang sudah tersedia pada menu <a class="goto" href="#informasi-kontak">Informasi Kontak</a>, terima kasih
+						<p>
+							Aplikasi ini dibuat dengan menggunakan bahasa pemrograman Java (untuk client) dan PHP (untuk server). Dengan adanya aplikasi ini anda dapat dengan mudah mengelola kendaraan yang anda miliki, mengelola transaksi penyewaan dan mengelola data pelanggan.
+							<br>
+							Anda dapat menjalankan Aplikasi ini dari berbagai sistem operasi (Operating System) seperti Linux, Mac, atau pun Windows.
+						</p>
 					</div>
 				</div>
 			</div>
 
 			<div id="theme-content-body">
-				<h2 id="doc-1">1. Struktur Data</h2>
+				<h2 id="unduh-aplikasi">Unduh Aplikasi</h2>
+
 				<p>
-					Sebelum menggunakan aplikasi ini, silahkan download terlebih dahulu file yang yang ada di repositori github <a href="https://github.com/imamfirmansyah/Java-Aplikasi-Sewa-Kendaraan">Java Aplikasi Sewa Kendaraan</a> atau bisa langsung mendownload repositorinya <a href="https://github.com/imamfirmansyah/Java-Aplikasi-Sewa-Kendaraan/archive/master.zip">di sini</a>
-				</p>
-				<p>
-					Setelah selesai mendownload, Extract <strong>Java-Aplikasi-Sewa-Kendaraan-master.zip</strong>, data pada file tersebut terdiri dari folder documentation, java-client, java-server, dan file README.md
+					<ul>
+						<li>
+							<a href="https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/archive/master.zip">
+								Download versi terbaru dari Aplikasi Sewa Kendaraan
+							</a>
+						</li>
+						<li>Clone repositori ini : <code>git clone https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan.git</code></li>
+					</ul>
 				</p>
 
-				<p><img src="assets/img/struktur-data.png"></p>
+				<hr>
+
+				<h2 id="struktur-data">Struktur Data</h2>
+				<pre>
+aplikasi-sewa-kendaraan/
+|
+|-- documentation
+|   |-- assets/
+|    `-- index.html
+|
+|-- java-client/
+|   |-- src/
+|	|-- target/
+|    `- pom.xml
+|
+|-- java-server/
+|   |-- app/
+|   |   |-- models/
+|   |    `- config.php
+|   |-- vendor/
+|   |-- .htaccess
+|   |-- composer.json
+|   |-- composer.lock
+|   |-- database.sql
+|    `- index.php
+|
+`- README.md</pre>
 				
 				<p>
 					<ul>
@@ -75,238 +113,331 @@
 
 				<hr>
 				
-				<h2 id="doc-2">2. Struktur Database</h2>
+				<h2 id="struktur-database">Struktur Database</h2>
 
 				<p>
-					Database yang saya gunakan seperti gambar di bawah ini:
+					Aplikasi ini menggunakan 4 tabel, dan struktur database yang digunakan seperti gambar di bawah ini :
 
 					<p><img src="assets/img/database-structure.png"></p>
 				</p>
 
 				<hr>
 
-				<h2 id="doc-3">3. Menjalankan Java Client</h2>
-
-				<h3 id="doc-3-1">3.1. Menggunakan IDE Netbean</h3>
+				<h2 id="instalasi">Instalasi</h2>
 
 				<p>
-					Untuk memudahkan, saya menggunakan IDE Netbean untuk menjalankan java client, namun sebelum menjalankan pastikan <strong>Maven</strong> sudah terinstal dan siap dijalankan pada komputer anda.
-
-					<ul>
-						<li>
-							Dalam dokumentasi ini saya menggunakan Windows dengan Netbean versi 8.1, silahkan menyesuaikan dengan versi netbean yang anda miliki
-							<img src="assets/img/java-client/01-jalankan-netbean.png">
-						</li>
-						<li>
-							Klik <code>File > Open Project </code> atau <code>Ctrl + Shift + O</code> untuk membuka project java maven dan arahkan pada direktori folder tempat kita mengextract file repositori yang telah kita download sebelumnya
-							<img src="assets/img/java-client/02-open-project.png">
-							<img src="assets/img/java-client/03-open-file.png">
-						</li>
-						<li>
-							Jika terdapat error seperti gambar di bawah ini, berarti repositori <strong>dependency</strong> yang dipanggil pada <code>pom.xml</code> belum dimiliki oleh repositori maven pada komputer anda, 
-							<img src="assets/img/java-client/04-error-project.png">
-						</li>
-						<li>
-							Untuk mengatasi error tersebut, jalankan saja <code>Main.java</code> nya maka, maven akan otomatis mendownload repositori yang dibutuhkan. Untuk menjalankannya, buka file <code>Main.java</code> lalu klik <code>Run > Run File</code> atau <code>Shift + F6</code>
-							<img src="assets/img/java-client/05-run-project.png">
-						</li>
-						<li>
-							Pastikan anda terkoneksi dengan internet, agar maven dapat mendownload dependency yang dibutuhkan, dan berikut adalah tampilan saat proses download repositorinya
-							<img src="assets/img/java-client/06-proses-download-repo.png">
-						</li>
-						<li>
-							Jika proses download sudah selesai maka akan muncul <strong>Form Login</strong> untuk masuk ke Aplikasi Penyewaan Kendaraan
-							<img src="assets/img/java-client/07-form-login.png">
-						</li>
-						<li>
-							Aplikasi telah siap untuk dijalankan
-						</li>
-					</ul>
-				</p>
-
-				<h3 id="doc-3-2">3.2. Menggunakan Console</h3>
-
-				<p>
-					Pastikan <strong>Maven</strong> sudah terinstal dan siap dijalankan pada komputer anda, lalu untuk menjalankan Maven Melalui Console pertama-tama masuk ke direktori folder tempat kita mengextract file repositori yang telah kita download sebelumnya, masuk ke folder <strong>java-client</strong>					
-				</p>
-
-				<p>
-					Compile dengan mengetik :
-
-					<pre>mvn clean package</pre>
-
-					Setelah proses download selesai, run <code>Main.java</code> dengan perintah
-
-					<pre>mvn exec:java -Dexec.mainClass=com.firmansyah.imam.aplikasi.uts.Main</pre>
-
-					Tunggu hingga maven selesai mendownload repositori dependency yang dibutuhkan,
-					
-					<img src="assets/img/java-client/08-jalankan-console.png">
+					Setelah mengunduh aplikasi ini, pastikan JDK dan Maven telah terinstall dan siap untuk dijalankan, untuk menjalankan aplikasi ini ada beberapa cara, diantaranya :
 				</p>
 				
+				<ol>
+					<li>
+						<h4 id="menggunakan-console">Menggunakan Console</h4>
+
+						<p>
+							Pertama-tama masuk ke direktori folder tempat kita menyimpan file repositori yang telah kita download sebelumnya, masuk ke folder <code>java-client</code>, Compile dengan cara mengetik :
+						</p>
+
+						<pre>mvn clean package</pre>
+
+						<p>Lalu, jalankan <code>Main.java</code> dengan cara mengetik :</p>
+
+						<pre>mvn exec:java -Dexec.mainClass=com.firmansyah.imam.sewa.kendaraan.Main</pre>
+					</li>
+					<li>
+						<h4 id="menggunakan-netbean">Menggunakan IDE Netbean </h4>
+
+						<p>
+							<code>Klik File > Open Project</code> atau <code>Ctrl + Shift + O</code> untuk membuka project, arahkan ke direktori <code>java-client</code>. <br>
+							Jalankan <code>Main.java</code> nya dengan cara klik <code>Run > Run File</code> atau <code>Shift + F6</code>
+						</p>
+
+						<p>
+							Tunggu hingga maven selesai mendownload repositori dependency yang dibutuhkan
+						</p>						
+					</li>
+					<li>
+						<h4 id="menjalankan-jar">Menjalankan .jar</h4>
+
+						<p>
+							Buka folder target yang ada pada folder <code>java-client</code>, lalu jalankan file <code>aplikasi-sewa-kendaraan-1.0.jar</code>
+						</p>
+					</li>
+				</ol>
+				
+				<p>
+					Jika Proses Instalasi berhasil maka akan muncul tampilan <code>Form Login</code> seperti gambar di bawah ini :
+					<img src="assets/img/java-client/01-form-login.png">
+				</p>
+			
 				<hr>
 
-				<h2 id="doc-4">4. Menggunakan Aplikasi</h2>
-
+				<h2 id="menggunakan-aplikasi">Menggunakan Aplikasi</h2>
+				
 				<p>
-					Untuk menjalankan Aplikasi Penyewaan Kendaraan, ikuti langkah-langkah pada tahapan <a class="goto" href="#doc-3">3. Menjalankan Java Client</a>, jika sudah muncul <strong>Form Login</strong> maka Aplikasi siap untuk dijalankan
-
-					<ul>
-						<li>
-							<p>		
-								<strong>Langkah Pertama</strong> yang harus kita lakukan adalah mendaftar terlebih dahulu, klik <strong>Tombol Register</strong> untuk mendaftar, lalu akan muncul <strong>Form Register</strong> seperti gambar dibawah ini :
-								<img src="assets/img/aplikasi/01-form-register.png">
-							</p>
-						</li>
-						<li>
-							<p>	
-								Masukkan <strong>Nama, Username, dan Password</strong> untuk contoh saya menginput : <br>
-								<code>Nama : administrator</code> <br>
-								<code>Username : admin</code> <br>
-								<code>Password : admin</code> <br>
-
-								Jika Berhasil maka akan muncul notifikasi seperti ini : 
-								<img src="assets/img/aplikasi/02-register-berhasil.png">
-							</p>
-						</li>
-						<li>
-							<p>	
-								Login dengan <strong>username</strong> dan <strong>password</strong> yang telah dibuat sebelumnya, Jika Login Berhasil maka akan muncul notifikasi seperti ini : 
-								<img src="assets/img/aplikasi/03-login-berhasil.png">
-							</p>
-						</li>
-						<li>
-							<p>	
-								Berikut ini adalah tampilan utama Aplikasi Penyewaan Kendaraan
-								<img src="assets/img/aplikasi/04-form-utama.png">
-							</p>
-						</li>
-						<li>
-							<p>
-								Ada 3 bagian utama dalam <strong>Form Sewa</strong>
-								<img src="assets/img/aplikasi/05-form-utama-deskripsi.png">
-							</p>
-							
-							<p>	
-								Area yang <strong>Berwarna Biru</strong> merupakan bagian untuk menyimpan transaksi penyewaan, <strong>ID Pelanggan</strong> merupakan data yang otomatis dimunculkan sesuai dengan data pelanggan yang akan kita inputkan pada <strong>Form Pelanggan</strong>, begitu juga dengan <strong>ID Kendaraan</strong> yang otomatis akan dimunculkan sesuai dengan data kendaraan yang kita inputkan pada <strong>Form Kendaraan.</strong> <br>
-							</p>
-							
-							<p>	
-								Area yang <strong>Berwarna Merah</strong> merupakan <strong>tabel hasil penyimpanan data transaksi</strong> dari area yang <strong>Berwarna Biru</strong>
-							</p>
-
-							<p>
-								Area yang <strong>Berwarna Kuning</strong> merupakan <strong>area tombol</strong> yang memiliki fungsinya masing-masing, untuk tombol : <br>
-								- <strong>Simpan Transaksi</strong> digunakan untuk menyimpan transaksi dari area <strong>Berwarna Biru</strong><br>
-								- <strong>Form User</strong> digunakan untuk memanggil <strong>Form User</strong> <br>
-								- <strong>Form Kendaraan</strong> digunakan untuk memanggil <strong>Form Kendaraan</strong> <br>
-								- <strong>Form Pelanggan</strong> digunakan untuk memanggil <strong>Form Pelanggan</strong> <br>
-								- <strong>Form Keluar</strong> digunakan untuk <strong>Keluar dari Aplikasi</strong> <br>
-							</p>
-						</li>
-						<li>
-							<p>	
-								Jika kita klik Tombol <strong>Form User</strong> akan muncul tampilan seperti gambar di bawah ini:
-								<img src="assets/img/aplikasi/06-form-user.png">
-							</p>
-
-							<p>
-								Kita bisa menambahkan <strong>Username baru</strong> agar dapat mengakses aplikasi ini melalui Form Login, dan untuk <strong>Ubah, Hapus, dan Non Aktifkan Username</strong> kita harus klik terlebih dahulu username yang ada pada tabel, seperti gambar dibawah ini :
-								<img src="assets/img/aplikasi/07-select-user.png">
-							</p>
-						</li>
-						<li>
-							<p>	
-								Jika kita klik Tombol <strong>Form Pelanggan</strong> akan muncul tampilan seperti gambar di bawah ini:
-								<img src="assets/img/aplikasi/08-form-pelanggan.png">
-								
-								Kita akan coba menginput data, sebagai contoh kita akan menginput data seperti dibawah ini : <br>
-								<strong>Data yang pertama :</strong> <br>
-								<code>Nama Pelanggan : Imam Firmansyah</code> <br>
-								<code>Alamat : Depok</code> <br>
-								<code>No. Telepon : 085781200013</code> <br>
-								<code>No. Identitas : 123456789</code> <br>
-
-								<strong>Data yang kedua :</strong><br>
-								<code>Nama Pelanggan : Dian Sapta</code> <br>
-								<code>Alamat : Jakarta</code> <br>
-								<code>No. Telepon : 085716607939</code> <br>
-								<code>No. Identitas : 987654321</code> <br>
-								
-								Dan di bawah ini adalah hasil dari data yang telah kita inputkan :
-								<img src="assets/img/aplikasi/09-form-pelanggan-sample-data.png">
-							</p>
-						</li>
-						<li>
-							<p>
-								Kita akan coba menginput Data Kendaraan, klik Tombol <strong>Form Kendaraan</strong> maka akan muncul tampilan seperti di bawah ini :
-								<img src="assets/img/aplikasi/10-form-kendaraan.png">
-
-								Kita akan coba menginput data, sebagai contoh kita akan menginput data seperti dibawah ini : <br>
-								<strong>Data yang pertama :</strong> <br>
-								<code>No. Polisi : B 1234 XYZ</code> <br>
-								<code>Nama Kendaraan : Honda - Jazz</code> <br>
-								<code>Tahun Kendaraan : 2014</code> <br>
-								<code>Biaya Sewa : 250000</code> <br>
-
-								<strong>Data yang kedua :</strong><br>
-								<code>No. Polisi : B 5678 VWX</code> <br>
-								<code>Nama Kendaraan : Toyota - Avanza</code> <br>
-								<code>Tahun Kendaraan : 2015</code> <br>
-								<code>Biaya Sewa : 200000</code> <br>
-								
-								Dan di bawah ini adalah hasil dari data yang telah kita inputkan :
-								<img src="assets/img/aplikasi/11-form-kendaraan-sample-data.png">
-							</p>
-						</li>
-						<li>
-							<p>	
-								Klik Tombol <strong>Form Sewa</strong> maka akan kembali ke Form Sewa, kita bisa mulai menginput data penyewaan kendaraan, klik <strong>Combo Box ID Pelangan</strong> data yang telah kita masukan sebelumnya sudah dapat dipanggil melalui combo box, 
-								<img src="assets/img/aplikasi/12-combo-box-pelanggan.png">
-								
-								Pilih ID Pelanggan maka akan muncul data pelanggan seperti gambar dibawah ini :
-								<img src="assets/img/aplikasi/13-data-pelanggan.png">
-
-								Begitu juga dengan data Kendaraan,
-								<img src="assets/img/aplikasi/14-data-kendaraan.png">
-							</p>
-						</li>
-						<li>
-							<p>
-								Kita akan mencoba menginput data transaksi penyewaan, pilih tanggal awal penyewaan dan tanggal akhir penyewaan, sebagai contoh kita inputkan data seperti gambar di bawah ini :
-								<img src="assets/img/aplikasi/15-data-transaksi.png">
-								
-								Maka pada tabel transaksi akan muncul data yang telah kita inputkan, 
-								<img src="assets/img/aplikasi/16-data-transaksi-sample.png">
-
-								Klik transaksi pada tabel transaksi untuk melihat detail dari transaksi penyewaan yang telah kita inputkan
-								<img src="assets/img/aplikasi/17-detail-transaksi.png">
-
-								Terdapat informasi mengenai transaksi penyewaan kendaraan, diantaranya lamanya waktu, biaya sewa dan kendaraan apa yang di sewa serta identitas pelanggan yang menyewa kendaraan tersebut, fungsi tombol <strong>Sewa Selesai</strong> merupakan tombol yang berfungsi untuk mengganti status dari <strong>Di Sewakan</strong> menjadi <strong>Selesai</strong>
-							</p>
-						</li>
-						<li>
-							Karena <strong>Data Pelanggan, Data Kendaraan</strong> memiliki relasi dengan <strong>Data Transaksi Sewa</strong> maka setiap kendaraan yang telah disewa, status kendaraan akan berganti dari <strong>tersedia</strong> menjadi <strong>tidak tersedia</strong>
-						</li>
-					</ul>
+					Setelah tahap <a href="#instalasi">instalasi</a> selesai dan aplikasi telah berhasil dijalankan maka akan muncul <code>Form Login</code>
 				</p>
+				<ol>
+					<li>
+						<p>		
+						<strong>Langkah Pertama</strong> yang harus kita lakukan adalah mendaftar terlebih dahulu, klik <strong>Tombol Register</strong> untuk mendaftar, lalu akan muncul <code>Form Register</code> seperti gambar dibawah ini :
+							<img src="assets/img/aplikasi/01-form-register.png">
+						</p>
+					</li>
+					<li>
+						<p>	
+							Masukkan <strong>Nama, Username, dan Password</strong> untuk contoh saya menginput : <br>
+<pre>Nama 		: administrator
+Username 	: admin
+Password 	: admin</pre>
+
+							Jika Berhasil maka akan muncul notifikasi seperti ini : 
+							<img src="assets/img/aplikasi/02-register-berhasil.png">
+						</p>
+					</li>
+					<li>
+						<p>	
+							Login dengan <strong>username</strong> dan <strong>password</strong> yang telah dibuat sebelumnya, Jika Login Berhasil maka akan muncul notifikasi seperti ini : 
+							<img src="assets/img/aplikasi/03-login-berhasil.png">
+						</p>
+					</li>
+					<li>
+						<p>	
+							Berikut ini adalah tampilan utama Aplikasi Penyewaan Kendaraan
+							<img src="assets/img/aplikasi/04-form-utama.png">
+						</p>
+					</li>
+					<li>
+						<p>
+							Ada 3 bagian utama dalam <code>Form Sewa</code>
+							<img src="assets/img/aplikasi/05-form-utama-deskripsi.png">
+						</p>
+
+						<p>	
+							Area yang <strong>Berwarna Biru</strong> merupakan bagian untuk menyimpan transaksi penyewaan, <strong>ID Pelanggan</strong> merupakan data yang otomatis dimunculkan sesuai dengan data pelanggan yang akan kita inputkan pada <strong>Form Pelanggan</strong>, begitu juga dengan <strong>ID Kendaraan</strong> yang otomatis akan dimunculkan sesuai dengan data kendaraan yang kita inputkan pada <strong>Form Kendaraan.</strong> <br>
+						</p>
+
+						<p>	
+							Area yang <strong>Berwarna Merah</strong> merupakan <strong>tabel hasil penyimpanan data transaksi</strong> dari area yang <strong>Berwarna Biru</strong>
+						</p>
+
+						<p>
+							Area yang <strong>Berwarna Kuning</strong> merupakan <strong>area tombol</strong> yang memiliki fungsinya masing-masing, untuk tombol : <br>
+							<ul>
+								<li>
+									<strong>Simpan Transaksi</strong> digunakan untuk menyimpan transaksi dari area <strong>Berwarna Biru</strong>
+								</li>
+								<li>
+									<strong>Form User</strong> digunakan untuk memanggil <code>Form User</code>
+								</li>
+								<li>
+									<strong>Form Kendaraan</strong> digunakan untuk memanggil <code>Form Kendaraan</code>
+								</li>
+								<li>
+									<strong>Form Pelanggan</strong> digunakan untuk memanggil <code>Form Pelanggan</code>
+								</li>
+								<li>
+									<strong>Form Keluar</strong> digunakan untuk <strong>Keluar dari Aplikasi</strong>	
+								</li>
+							</ul>
+						</p>
+					</li>
+					<li>
+						<p>	
+							Jika kita klik Tombol <strong>Form User</strong> akan muncul tampilan seperti gambar di bawah ini:
+							<img src="assets/img/aplikasi/06-form-user.png">
+						</p>
+
+						<p>
+							Kita bisa menambahkan <strong>Username</strong> baru agar dapat mengakses aplikasi ini melalui <code>Form Login</code>, dan untuk <strong>Ubah, Hapus, dan Non Aktifkan Username</strong> kita harus klik terlebih dahulu kita harus klik terlebih dahulu data yang ada pada tabel, setelah diklik maka kolom input akan otomatis terisi seperti gambar dibawah ini :
+							<img src="assets/img/aplikasi/07-select-user.png">
+						</p>
+
+						<p>
+							Tombol <strong>Non Aktifkan</strong> dipergunakan untuk menonaktifkan dan mengaktifkan <code>username</code>, jika status username <strong>Non Aktif</strong> maka username <strong>tidak dapat login</strong>
+						</p>
+						<p>
+							Klik Tombol <strong>Form Sewa</strong> untuk kembali ke <code>Form Sewa</code>
+						</p>
+					</li>
+					<li>
+						<p>	
+							Jika kita klik Tombol <strong>Form Pelanggan</strong> akan muncul tampilan seperti gambar di bawah ini:
+							<img src="assets/img/aplikasi/08-form-pelanggan.png">
+
+							Kita akan coba menginput data, sebagai contoh kita akan menginput data seperti dibawah ini : <br>
+<pre>- Data yang pertama :
+Nama Pelanggan  : Imam Firmansyah 
+Alamat          : Depok 
+No. Telepon     : 085712345678 
+No. Identitas   : 123456789 
+
+- Data yang kedua :
+Nama Pelanggan  : Dian Sapta 
+Alamat          : Jakarta 
+No. Telepon     : 085787654321 
+No. Identitas   : 987654321 
+</pre>
+
+							Dan di bawah ini adalah hasil dari data yang telah kita inputkan :
+							<img src="assets/img/aplikasi/09-form-pelanggan-sample-data.png">
+						</p>
+						<p>
+							Klik Tombol <strong>Form Sewa</strong> untuk kembali ke <code>Form Sewa</code>
+						</p>
+					</li>
+					<li>
+						<p>
+							Kita akan coba menginput Data Kendaraan, klik Tombol <strong>Form Kendaraan</strong> maka akan muncul tampilan seperti di bawah ini :
+							<img src="assets/img/aplikasi/10-form-kendaraan.png">
+
+							Kita akan coba menginput data, sebagai contoh kita akan menginput data seperti dibawah ini : <br>
+<pre>- Data yang pertama : 
+No. Polisi      : B 1234 XYZ 
+Nama Kendaraan  : Honda - Jazz 
+Tahun Kendaraan : 2014 
+Biaya Sewa      : 250000 
+
+- Data yang kedua :
+No. Polisi      : B 5678 VWX 
+Nama Kendaraan  : Toyota - Avanza 
+Tahun Kendaraan : 2015 
+Biaya Sewa      : 200000 
+</pre>
+
+							Dan di bawah ini adalah hasil dari data yang telah kita inputkan :
+							<img src="assets/img/aplikasi/11-form-kendaraan-sample-data.png">
+						</p>
+						<p>
+							Klik Tombol <strong>Form Sewa</strong> untuk kembali ke <code>Form Sewa</code>
+						</p>
+					</li>
+					<li>
+						<p>	
+							Kita bisa mulai menginput data penyewaan kendaraan, klik <strong>Combo Box ID Pelangan</strong> data yang telah kita masukan sebelumnya sudah dapat dipanggil melalui combo box, 
+							<img src="assets/img/aplikasi/12-combo-box-pelanggan.png">
+
+							Pilih ID Pelanggan maka akan muncul data pelanggan seperti gambar dibawah ini, <br>
+							sebagai contoh kita memilih <strong>ID Pelanggan 1</strong>
+							<img src="assets/img/aplikasi/13-data-pelanggan.png">
+
+							Begitu juga dengan <strong>ID Kendaraan</strong>,
+							<img src="assets/img/aplikasi/14-data-kendaraan.png">
+						</p>
+					</li>
+					<li>
+						<p>
+							Kita akan mencoba menginput data transaksi penyewaan, pilih tanggal awal penyewaan dan tanggal akhir penyewaan, sebagai contoh kita inputkan data seperti gambar di bawah ini :
+							<img src="assets/img/aplikasi/15-data-transaksi.png">
+
+							Maka pada tabel transaksi akan muncul data yang telah kita inputkan, 
+							<img src="assets/img/aplikasi/16-data-transaksi-sample.png">
+
+							Klik transaksi pada tabel transaksi untuk melihat detail dari transaksi penyewaan yang telah kita inputkan
+							<img src="assets/img/aplikasi/17-detail-transaksi.png">
+
+							Terdapat informasi mengenai transaksi penyewaan kendaraan, diantaranya lamanya waktu, biaya sewa dan kendaraan apa yang di sewa serta identitas pelanggan yang menyewa kendaraan tersebut, fungsi tombol <strong>Sewa Selesai</strong> merupakan tombol yang berfungsi untuk mengganti status dari <strong>Di Sewakan</strong> menjadi <strong>Selesai</strong>
+						</p>
+					</li>
+					<li>
+						Karena <strong>Data Pelanggan, Data Kendaraan</strong> memiliki relasi dengan <strong>Data Transaksi Sewa</strong> maka setiap kendaraan yang telah disewa, status kendaraan akan berganti dari <strong>Tersedia</strong> menjadi <strong>Tidak Tersedia</strong>
+					</li>
+				</ol>
+
+				<hr>
+					
+				<h2 id="instalasi-server-aplikasi-secara-lokal">Instalasi Server Aplikasi Secara Lokal</h2>
+				
+				<p>
+					Anda juga dapat menjalankan aplikasi ini secara lokal melalui jaringan lokal yang anda miliki, misalkan saya ingin mencoba aplikasi ini pada perangkat laptop saya dan mencobanya melalui <code>localhost</code> menggunakan <code>apache</code> yang sudah tersedia dalam aplikasi <code>XAMPP</code>
+				</p>
+
+				<ol>
+					<li>
+						<p>	
+							Langkah pertama yang harus saya lakukan adalah masuk ke direktori folder tempat menyimpan file repositori yang telah didownload sebelumnya, masuk ke folder <code>java-server</code>, saya copy seluruh isi pada folder tersebut (lihat <a href="#struktur-data">struktur data</a>) dan paste pada folder <code>xampp\htdocs\java-server</code>
+						</p>
+					</li>
+					<li>
+						<p>	
+							Buatlah <strong>database</strong>, anda bisa mengunakan <code>phpmyadmin</code> dan <strong>import</strong> file <code>database.sql</code> yang terdapat pada folder <code>java-server</code> pada database yang telah anda buat sebelumnya
+						</p>
+					</li>
+					<li>
+						<p>
+							Buka direktori <code>htdocs > java-server</code>, lalu edit file <code>config.php</code> yang ada pada folder <code>app > config.php</code> melalui text editor :
+<pre>&lt;?php
+
+use Illuminate\Database\Capsule\Manager as Capsule;
+
+/**
+ * Configure the database and boot Eloquent
+ */
+
+$capsule = new Capsule;
+
+$capsule-&gt;addConnection(array(
+    'driver'    =&gt; 'mysql',
+    'host'      =&gt; 'YOUR_HOST',
+    'database'  =&gt; 'YOUR_DATABASE',
+    'username'  =&gt; 'YOUR_USERNAME',
+    'password'  =&gt; 'YOUR_PASSWORD',
+    'charset'   =&gt; 'utf8',
+    'collation' =&gt; 'utf8_general_ci',
+    'prefix'    =&gt; ''
+));
+
+$capsule-&gt;setAsGlobal();
+
+$capsule-&gt;bootEloquent();
+
+// set timezone for timestamps etc
+date_default_timezone_set('UTC');
+</pre>
+
+							Isikan data diatas sesuai dengan host, database, username, dan password pada database anda
+						</p>
+					</li>
+					<li>
+						<p>
+							Buka <code>browser</code> dan ketik pada kolom <code>URL</code> dengan <code>localhost/java-server</code>, jika muncul tulisan seperti di bawah ini
+							<pre>Hello Selamat Datang Di Rest API Aplikasi Penyewaan Kendaraan</pre>
+							Maka <code>java-server</code> sudah siap untuk digunakan
+						</p>
+					</li>
+					<li>
+						<p>
+							langkah terakhir adalah mengganti <code>Path URL</code> Aplikasi Sewa Kendaraan, buka file <code>Path.java</code> yang ada pada folder <code>java-client\src\main\java\com\firmansyah\imam\sewa\kendaraan</code> melalui text editor :
+							<pre>package com.firmansyah.imam.sewa.kendaraan;
+
+public class Path {
+
+    public static String serverURL = &quot;http://kuliah.imamfirmansyah.com/java-server&quot;;
+
+}</pre>
+
+							secara <em>default</em> <code>Path URL</code> Aplikasi Sewa Kendaraan mengarah ke alamat <code>http://kuliah.imamfirmansyah.com/java-server</code>, ubah dengan alamat local yang telah kita buat sebelumnya menjadi <code>localhost/java-server</code>
+						</p>
+					</li>
+					<li>
+						<p>
+							Jalankan kembali Aplikasi Sewa Kendaraan, dan Aplikasi berjalan melalui server dari <code>localhost</code> yang telah kita buat
+						</p>
+					</li>
+				</ol>
 
 				<hr>
 
 				<h2 id="informasi-kontak">Informasi Kontak</h2>
-
+	
 				<p>
-
-					<ul>
-						<li>Nama : Imam Firmansyah</li>
-						<li>NPM : 4515217015</li>
-						<li>Github : <a href="https://github.com/imamfirmansyah">imamfirmansyah</a></li>
-						<li>Twitter : <a href="https://twitter.com/imamfirman">@imamfirman</a></li>
-						<li>Facebook : <a href="https://facebook.com/imamfirmansyah27">imam firmansyah</a></li>
-						<li>Web : <a href="http://imamfirmansyah.com">imamfirmansyah.com</a></li>
-						<li>Email 1 : <a href="mailto:hubungi@imamfirmansyah.com">hubungi@imamfirmansyah.com</a></li>
-						<li>Email 2 : <a href="mailto:imamfirmansyah27@gmail.com">imamfirmansyah27@gmail.com</a></li>
-					</ul>
+					Terima Kasih, <br>
+					Jika ada pertanyaan mengenai Aplikasi Sewa Kendaraan silahkan hubungi saya melalui informasi kontak di bawah ini : 
+				</p>
+				<p>
+					Facebook : <a href="https://facebook.com/imamfirmansyah27">Imam Firmansyah</a> <br> 
+					Github  : <a href="https://github.com/imamfirmansyah">https://github.com/imamfirmansyah</a> <br>
+					Twitter : <a href="https://twitter.com/imamfirman">@imamfirman</a> <br>
+					Email   : <a href="mailto:hubungi@imamfirmansyah.com">hubungi@imamfirmansyah.com</a>
 				</p>
 
 				<hr>
