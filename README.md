@@ -57,7 +57,7 @@ Aplikasi ini menggunakan 4 tabel, dan struktur database yang digunakan seperti g
 
 Setelah mengunduh aplikasi ini, pastikan JDK dan Maven telah terinstall dan siap untuk dijalankan, untuk menjalankan aplikasi ini ada beberapa cara, diantaranya :
 
-1. Menggunakan Console
+1. **Menggunakan Console** <br>
 	Pertama-tama masuk ke direktori folder tempat kita menyimpan file repositori yang telah kita download sebelumnya, masuk ke folder `java-client`, Compile dengan cara mengetik :
 
 	```
@@ -69,7 +69,7 @@ Setelah mengunduh aplikasi ini, pastikan JDK dan Maven telah terinstall dan siap
 	mvn exec:java -Dexec.mainClass=com.firmansyah.imam.sewa.kendaraan.Main
 	```
 
-2. Menggunakan IDE Netbean
+2. **Menggunakan IDE Netbean** <br>
 	`Klik File > Open Project` atau `Ctrl + Shift + O` untuk membuka project, arahkan ke direktori `java-client`. <br>
 	Jalankan `Main.java` nya dengan cara `klik Run > Run File1` atau `Shift + F6`
 
@@ -77,7 +77,7 @@ Setelah mengunduh aplikasi ini, pastikan JDK dan Maven telah terinstall dan siap
 
 	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/java-client/07-form-login.png "Form Login")
 
-3. Menjalankan aplikasi-sewa-kendaraan-1.0.jar
+3. **Menjalankan aplikasi-sewa-kendaraan-1.0.jar** <br>
 
 	Buka folder `target` yang ada pada folder `java-client`, lalu jalankan file `aplikasi-sewa-kendaraan-1.0.jar`
 
@@ -105,11 +105,11 @@ Setelah tahap [instalasi](#instalasi) selesai dan aplikasi telah berhasil dijala
 
 4. Berikut ini adalah tampilan utama Aplikasi Penyewaan Kendaraan
 
-	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/04-form-utama.png "Form Utama")
+	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/04-form-utama.png "Form Sewa")
 
 5. Ada **3 bagian** utama dalam Form Sewa
 
-	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/05-form-utama-deskripsi.png "Deskripsi Form Utama")
+	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/05-form-utama-deskripsi.png "Deskripsi Form Sewa")
 
 	Area yang **Berwarna Biru** merupakan bagian untuk menyimpan transaksi penyewaan, **ID Pelanggan** merupakan data yang otomatis dimunculkan sesuai dengan data pelanggan yang akan kita inputkan pada `Form Pelanggan`, begitu juga dengan **ID Kendaraan** yang otomatis akan dimunculkan sesuai dengan data kendaraan yang kita inputkan pada `Form Kendaraan`. <br>
 
@@ -117,7 +117,73 @@ Setelah tahap [instalasi](#instalasi) selesai dan aplikasi telah berhasil dijala
 
 	Area yang **Berwarna Kuning** merupakan area tombol yang memiliki fungsinya masing-masing, untuk tombol : <br>
 	- Simpan Transaksi digunakan untuk menyimpan transaksi dari area Berwarna Biru
-	- Form User digunakan untuk memanggil Form User 
-	- Form Kendaraan digunakan untuk memanggil Form Kendaraan 
-	- Form Pelanggan digunakan untuk memanggil Form Pelanggan 
-	- Form Keluar digunakan untuk Keluar dari Aplikasi 
+	- Tombol **Form User** digunakan untuk memanggil `Form User` 
+	- Tombol **Form Kendaraan** digunakan untuk memanggil `Form Kendaraan` 
+	- Tombol **Form Pelanggan** digunakan untuk memanggil `Form Pelanggan` 
+	- Tombol **Form Keluar** digunakan untuk **Keluar** dari Aplikasi 
+
+6. Jika kita klik Tombol **Form User** akan muncul tampilan seperti gambar di bawah ini:
+
+	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/06-form-user.png "Form User")
+
+	Kita bisa menambahkan **Username** baru agar dapat mengakses aplikasi ini melalui `Form Login`, dan untuk **Ubah, Hapus, dan Non Aktifkan Username** kita harus klik terlebih dahulu data yang ada pada tabel, setelah diklik makan kolom input akan otomatis terisi seperti gambar dibawah ini :
+
+	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/07-select-user.png "Select User")
+
+	Tombol **Non Aktif** dipergunakan untuk menonaktifkan dan mengaktifkan `username`, jika status username **Non Aktif** maka username **tidak dapat login**
+
+	Klik Tombol **Form Sewa** untuk kembali ke `Form Sewa`
+
+7. Jika kita klik Tombol **Form Pelanggan** akan muncul tampilan seperti gambar di bawah ini:
+
+	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/08-form-pelanggan.png "Form Pelaggan")
+
+	Kita akan coba menginput data, sebagai contoh kita akan menginput data seperti dibawah ini : <br>
+	```
+	- Data yang pertama :
+	Nama Pelanggan 	: Imam Firmansyah 
+	Alamat 			: Depok 
+	No. Telepon 	: 085781200013 
+	No. Identitas 	: 123456789 
+	
+	- Data yang kedua :
+	Nama Pelanggan 	: Dian Sapta 
+	Alamat 			: Jakarta 
+	No. Telepon 	: 085716607939 
+	No. Identitas 	: 987654321 
+	```
+
+	Dan di bawah ini adalah hasil dari data yang telah kita inputkan :
+	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/09-form-pelanggan-sample-data.png "Data Form Pelaggan")
+
+	Klik Tombol **Form Sewa** untuk kembali ke `Form Sewa`
+
+8. Kita akan coba menginput Data Kendaraan, klik Tombol **Form Kendaraan** maka akan muncul tampilan seperti di bawah ini : 
+	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/10-form-kendaraan.png "Form Kendaraan")
+
+	Kita akan coba menginput data, sebagai contoh kita akan menginput data seperti dibawah ini : 
+	``` 
+	- Data yang pertama : 
+	No. Polisi 		: B 1234 XYZ 
+	Nama Kendaraan 	: Honda - Jazz 
+	Tahun Kendaraan : 2014 
+	Biaya Sewa 		: 250000 
+	
+	- Data yang kedua :
+	No. Polisi 		: B 5678 VWX 
+	Nama Kendaraan 	: Toyota - Avanza 
+	Tahun Kendaraan : 2015 
+	Biaya Sewa 		: 200000 
+	```
+	Dan di bawah ini adalah hasil dari data yang telah kita inputkan :
+	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/11-form-kendaraan-sample-data.png "Data Form Kendaraan")
+
+	Klik Tombol **Form Sewa** untuk kembali ke `Form Sewa`
+
+9. Klik Tombol **Form Sewa** maka akan kembali ke `Form Sewa`
+	kita bisa mulai menginput data penyewaan kendaraan, klik **Combo Box ID Pelangan** data yang telah kita masukan sebelumnya sudah dapat dipanggil melalui combo box,
+	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/12-combo-box-pelanggan.png "Combo Box ID Pelanggan")
+
+	Pilih ID Pelanggan maka akan muncul data pelanggan seperti gambar dibawah ini, sebagai contoh kita memilih **ID Pelanggan 1**
+	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/13-data-pelanggan.png "Combo Box Data Pelanggan")
+	
