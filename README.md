@@ -276,7 +276,7 @@ Anda juga dapat menjalankan aplikasi ini secara lokal melalui jaringan lokal yan
 ## Informasi Kontak
 
 Terima Kasih, <br>
-Jika ada pertanyaan mengenai Aplikasi Sewa Kendaraan silahkan hubungi saya melalui informasi kontak di bawah ini : <br><br>
+Jika ada pertanyaan mengenai Aplikasi Sewa Kendaraan silahkan hubungi saya melalui informasi kontak di bawah ini : <br>
 
 Facebook : [Imam Firmansyah](https://facebook.com/imamfirmansyah27) <br> 
 Github 	: [https://github.com/imamfirmansyah](https://github.com/imamfirmansyah) <br>
