@@ -12,7 +12,8 @@ Anda dapat menjalankan Aplikasi ini dari berbagai sistem operasi (Operating Syst
 - [Database](#database)
 - [Instalasi](#instalasi)
 - [Menggunakan Aplikasi](#menggunakan-aplikasi)
-- [Instalasi Aplikasi Secara Lokal](#menggunakan-local)
+- [Instalasi Server Aplikasi Secara Lokal](#instalasi-server-aplikasi-secara-lokal)
+- [Informasi Kontak](#informasi-kontak)
 
 ## Unduh Aplikasi
 
@@ -143,13 +144,13 @@ Setelah tahap [instalasi](#instalasi) selesai dan aplikasi telah berhasil dijala
 	- Data yang pertama :
 	Nama Pelanggan 	: Imam Firmansyah 
 	Alamat 			: Depok 
-	No. Telepon 	: 085781200013 
+	No. Telepon 	: 085712345678 
 	No. Identitas 	: 123456789 
 	
 	- Data yang kedua :
 	Nama Pelanggan 	: Dian Sapta 
 	Alamat 			: Jakarta 
-	No. Telepon 	: 085716607939 
+	No. Telepon 	: 085787654321 
 	No. Identitas 	: 987654321 
 	```
 
@@ -206,3 +207,74 @@ Setelah tahap [instalasi](#instalasi) selesai dan aplikasi telah berhasil dijala
 	Terdapat informasi mengenai transaksi penyewaan kendaraan, diantaranya lamanya waktu, biaya sewa dan kendaraan apa yang di sewa serta identitas pelanggan yang menyewa kendaraan tersebut, fungsi tombol **Sewa Selesai** merupakan tombol yang berfungsi untuk mengganti status dari **Di Sewakan** menjadi **Selesai**
 
 11. Karena **Data Pelanggan, Data Kendaraan** memiliki relasi dengan **Data Transaksi** Sewa maka setiap kendaraan yang telah disewa, status kendaraan akan berganti dari **Tersedia** menjadi **Tidak Tersedia**
+
+12. Klik tombol **Keluar** untuk keluar dari aplikasi
+
+## Instalasi Server Aplikasi Secara Lokal
+
+Anda juga dapat menjalankan aplikasi ini secara lokal melalui jaringan lokal yang anda miliki, misalkan saya ingin mencoba aplikasi ini pada perangkat laptop saya dan mencobanya melalui `localhost` menggunakan `apache` yang sudah tersedia dalam aplikasi `XAMPP`
+
+1. Langkah pertama yang harus saya lakukan adalah masuk ke direktori folder tempat menyimpan file repositori yang telah didownload sebelumnya, masuk ke folder `java-server`, saya *copy* seluruh isi pada folder tersebut (lihat [struktur data](#struktur-data)) dan *paste* pada folder `xampp\htdocs\java-server`
+
+2. Buatlah **database**, anda bisa mengunakan `phpmyadmin` dan **import** file `database.sql` yang terdapat pada folder `java-server` pada database yang telah anda buat sebelumnya
+
+3. Buka direktori `htdocs > java-server`, lalu *edit* file `config.php` yang ada pada folder `app > config.php` melalui text editor :
+	``` php
+	<?php
+	
+	use Illuminate\Database\Capsule\Manager as Capsule;
+	
+	/**
+	 * Configure the database and boot Eloquent
+	 */
+	
+	$capsule = new Capsule;
+	
+	$capsule->addConnection(array(
+	    'driver'    => 'mysql',
+	    'host'      => 'YOUR_HOST',
+	    'database'  => 'YOUR_DATABASE',
+	    'username'  => 'YOUR_USERNAME',
+	    'password'  => 'YOUR_PASSWORD',
+	    'charset'   => 'utf8',
+	    'collation' => 'utf8_general_ci',
+	    'prefix'    => ''
+	));
+	
+	$capsule->setAsGlobal();
+	
+	$capsule->bootEloquent();
+	
+	// set timezone for timestamps etc
+	date_default_timezone_set('UTC');
+	```
+	
+	Isikan data diatas sesuai dengan host, database, username, dan password pada database anda
+
+4. Buka `browser` dan ketik pada kolom `URL` dengan `localhost/java-server`, jika muncul tulisan seperti di bawah ini
+	```
+	Hello Selamat Datang Di Rest API Aplikasi Penyewaan Kendaraan
+	```
+	Maka `java-server` sudah siap untuk digunakan
+
+5. langkah terakhir adalah mengganti `Path URL` Aplikasi Sewa Kendaraan, buka file `Path.java` yang ada pada folder `java-client\src\main\java\com\firmansyah\imam\sewa\kendaraan` melalui text editor :
+	``` java
+	package com.firmansyah.imam.sewa.kendaraan;
+
+	public class Path {
+    
+    	public static String serverURL = "http://kuliah.imamfirmansyah.com/java-server";
+       
+	}
+	```
+	secara *default* `Path URL` Aplikasi Sewa Kendaraan mengarah ke alamat `http://kuliah.imamfirmansyah.com/java-server`, ubah dengan alamat local yang telah kita buat sebelumnya menjadi `localhost/java-server`
+
+6. Jalankan kembali Aplikasi Sewa Kendaraan, dan Aplikasi berjalan melalui server dari `localhost` yang telah kita buat
+
+## Informasi Kontak
+
+Terima Kasih, Jika ada pertanyaan mengenai Aplikasi Sewa Kendaraan, silahkan hubungi saya melalui informasi kontak di bawah ini : <br>
+Nama 	: Imam Firmansyah <br>
+Github 	: [https://github.com/imamfirmansyah](https://github.com/imamfirmansyah) <br>
+Twitter	: [@imamfirman](https://twitter.com/imamfirman) <br>
+Email 	: [hubungi@imamfirmansyah.com](mailto:hubungi@imamfirmansyah.com)
