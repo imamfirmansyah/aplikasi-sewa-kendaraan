@@ -190,7 +190,7 @@ Setelah tahap [instalasi](#instalasi) selesai dan aplikasi telah berhasil dijala
 
 	Klik Tombol **Form Sewa** untuk kembali ke `Form Sewa`
 
-9. Kita bisa mulai menginput data penyewaan kendaraan, klik **Combo Box ID Pelangan** data yang telah kita masukan sebelumnya sudah dapat dipanggil melalui combo box,
+9. Kita bisa mulai menginput data penyewaan kendaraan, klik **Combo Box ID Pelangan** data yang telah kita masukan sebelumnya sudah dapat dipanggil melalui combo box, <br>
 	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/12-combo-box-pelanggan.png "Combo Box ID Pelanggan") <br>
 
 	Pilih ID Pelanggan maka akan muncul data pelanggan seperti gambar dibawah ini, <br>
