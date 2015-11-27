@@ -182,8 +182,27 @@ Setelah tahap [instalasi](#instalasi) selesai dan aplikasi telah berhasil dijala
 
 9. Klik Tombol **Form Sewa** maka akan kembali ke `Form Sewa`
 	kita bisa mulai menginput data penyewaan kendaraan, klik **Combo Box ID Pelangan** data yang telah kita masukan sebelumnya sudah dapat dipanggil melalui combo box,
-	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/12-combo-box-pelanggan.png "Combo Box ID Pelanggan")
+	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/12-combo-box-pelanggan.png "Combo Box ID Pelanggan") <br>
 
-	Pilih ID Pelanggan maka akan muncul data pelanggan seperti gambar dibawah ini, sebagai contoh kita memilih **ID Pelanggan 1**
-	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/13-data-pelanggan.png "Combo Box Data Pelanggan")
+	Pilih ID Pelanggan maka akan muncul data pelanggan seperti gambar dibawah ini, sebagai contoh kita memilih **ID Pelanggan 1**<br>
+	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/13-data-pelanggan.png "Combo Box Data Pelanggan") <br>
+
+	Begitu juga dengan **ID Kendaraan**,
+
+	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/14-data-kendaraan.png "Combo Box Data Kendaraan")
+
+10. Kita akan mencoba menginput data transaksi penyewaan, pilih tanggal awal penyewaan dan tanggal akhir penyewaan, sebagai contoh kita inputkan data seperti gambar di bawah ini :
+
+	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/15-data-transaksi.png "Combo Box Data Pelanggan")
+
+	Maka pada tabel transaksi akan muncul data yang telah kita inputkan, <br>
+
+	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/16-data-transaksi-sample.png "Data Transaksi")
+
+	Klik transaksi pada tabel transaksi untuk melihat detail dari transaksi penyewaan yang telah kita inputkan <br>
+
+	![alt text](https://github.com/imamfirmansyah/aplikasi-sewa-kendaraan/blob/master/documentation/assets/img/aplikasi/17-detail-transaksi.png "Detail Transaksi")
 	
+	Terdapat informasi mengenai transaksi penyewaan kendaraan, diantaranya lamanya waktu, biaya sewa dan kendaraan apa yang di sewa serta identitas pelanggan yang menyewa kendaraan tersebut, fungsi tombol **Sewa Selesai** merupakan tombol yang berfungsi untuk mengganti status dari **Di Sewakan** menjadi **Selesai**
+
+11. Karena **Data Pelanggan, Data Kendaraan** memiliki relasi dengan **Data Transaksi** Sewa maka setiap kendaraan yang telah disewa, status kendaraan akan berganti dari **Tersedia** menjadi **Tidak Tersedia**
