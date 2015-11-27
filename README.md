@@ -50,6 +50,11 @@ aplikasi-sewa-kendaraan/
 `- README.md
 ```
 
+- Folder documentation : berisi tentang **Dokumentasi** penggunaan
+- Folder java-client : berisi tentang **Aplikasi Java** Sewa Kendaraan
+- Folder java-server : berisi tentang **File PHP untuk Server** aplikasi java penyewaan kendaraan
+- File README.md : Readme.md
+
 ## Database
 
 Aplikasi ini menggunakan 4 tabel, dan struktur database yang digunakan seperti gambar di bawah ini :
