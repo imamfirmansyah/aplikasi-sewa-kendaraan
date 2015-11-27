@@ -278,7 +278,8 @@ Anda juga dapat menjalankan aplikasi ini secara lokal melalui jaringan lokal yan
 	```
 	secara *default* `Path URL` Aplikasi Sewa Kendaraan mengarah ke alamat `http://kuliah.imamfirmansyah.com/java-server`, ubah dengan alamat local yang telah kita buat sebelumnya menjadi `localhost/java-server`
 
-6. Jalankan kembali Aplikasi Sewa Kendaraan, dan Aplikasi berjalan melalui server dari `localhost` yang telah kita buat
+6. Jalankan kembali Aplikasi Sewa Kendaraan, dan Aplikasi berjalan melalui server dari `localhost` yang telah kita buat. <br>
+	Cara ini pun berlaku jika anda ingin mengupload `java-server` pada `hosting` dan `domain` yang anda miliki, sesuaikan konfigurasi **database** dengan database yang ada di hosting anda dan **Path URL** dengan alamat `domain` anda
 
 ## Informasi Kontak
 
